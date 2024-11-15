@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18">
+  <g id="Group_8188" data-name="Group 8188" transform="translate(-1702 -11)">
+    <g id="Ellipse_902" data-name="Ellipse 902" transform="translate(1702 11)" fill="none" stroke="#d0d0d0" stroke-width="0.5">
+      <ellipse cx="9.5" cy="9" rx="9.5" ry="9" stroke="none"/>
+      <ellipse cx="9.5" cy="9" rx="9.25" ry="8.75" fill="none"/>
+    </g>
+    <path id="icons8-linkedin" d="M9.215,10.287v5.432H7.5V10.287ZM7.5,8.706A.762.762,0,0,1,8.358,8a.773.773,0,0,1,.858.706.761.761,0,0,1-.858.723A.774.774,0,0,1,7.5,8.706Zm8,7.013H13.789V12.86a1.028,1.028,0,0,0-1-1.155h-.023c-.692,0-.978.589-.978,1.155v2.859H10.073V10.287h1.715v.732a2.141,2.141,0,0,1,1.661-.732A2.067,2.067,0,0,1,15.5,12.648Z" transform="translate(1699.788 8)" fill="gray"/>
+  </g>
+</svg>
