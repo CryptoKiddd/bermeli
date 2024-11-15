@@ -230,6 +230,12 @@ height: 100%;
     gap:25px;
     font-size: 12px;
   }
+  .topbar ul a{
+    color: var(--grey-font);
+  }
+  .topbar ul a:hover{
+    color: black;
+  }
   .icon{
     width: 20px;
     height: 20px;
@@ -262,6 +268,30 @@ height: 100%;
   .phone{
     -webkit-mask-image: url("../images/phone.svg");
   mask-image: url('../images/phone.svg');
+}
+  .dollar{
+    background-color:var(--secondary-color);
+    width: 23px;
+    height: 23px;
+
+    -webkit-mask-image: url("../images/dollar.svg");
+  mask-image: url('../images/dollar.svg');
+}
+  .location{
+    background-color:var(--secondary-color);
+    width: 20px;
+    height: 25px;
+
+    -webkit-mask-image: url("../images/location.svg");
+  mask-image: url('../images/location.svg');
+}
+  .message{
+    background-color:var(--secondary-color);
+    -webkit-mask-image: url("../images/chat.svg");
+  mask-image: url('../images/chat.svg');
+}
+.dollar:hover, .location:hover, .message:hover{
+    background-color: var(--primary-color);
 }
 
 .navigation .top {
@@ -370,7 +400,7 @@ height: 100%;
     position: relative;
     display: flex;
     align-items: center;justify-content: center;
-    padding-inline: 39px;
+    padding-inline: 38px;
     height: 100%;
     cursor: pointer;
     transition: 350ms ease-out;
@@ -412,3 +442,391 @@ height: 100%;
     background-color: var(--tertiary-color);
 
 }
+
+.hero{
+    position: relative;
+    width: 100%;
+}
+#hero-carousel{
+    height: 100%;
+}
+.hero-carousel-item{
+    position: relative;
+}
+.hero-carousel-item header {
+    position: absolute;
+    bottom: 80px;
+    left: var(--fullhd-padding);
+    max-width: 560px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.801);
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-right: 40px;
+    border-radius: 25px;
+    color: var(--primary-color);
+
+}
+.hero-carousel-item header  h1{
+    font-family: 'Helvetica Neue LT GEO';
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--primary-color);
+    opacity: 1;
+    z-index: 2;
+  
+}
+.hero-carousel-item header  p{
+    color: var(--primary-color);
+    
+    font-size: 16px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+  
+}
+.hero-carousel-item aside{
+    display: flex;
+    position: absolute;
+    background-color: white;
+    top: 129px;
+    font-family:" Helvetica Neue LT GEO";
+
+    right: 0px;
+    max-width: 800px;
+    width: 100%;
+    padding: 10px;
+    padding-left: 25px;
+    border-top-left-radius: 25px ;
+    border-bottom-left-radius: 25px;
+    font-size: 40px;
+    color: var(--primary-color);
+
+}
+.carousel-item-btn{
+   
+    height: 36px;
+    width: 160px;
+    margin-bottom: -19px;
+}
+.hero-carousel-dots{
+    position: absolute;
+    cursor: pointer;
+
+    left: calc(var(--fullhd-padding) + 40px   ) ;
+    bottom: 340px;
+    z-index: 2;
+}
+.hero-dot{
+    display: inline-block;
+    cursor: pointer;
+    background-color: white;
+    width: 12px;
+    height: 6px;
+    border-radius: 5px;
+ 
+    transition: 250ms ease;
+}
+.active-hero-dot{
+    width: 24px;
+    background-color: var(--secondary-color);
+    
+}
+.hero-icons {
+    position: absolute;
+    gap: 12px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-50%);
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+  
+    height: 149px;
+    width: 49px;
+    border-radius: 25px;
+    border: 1px solid var(--secondary-color);
+}
+.hero-icons button{
+    width: 100%;
+}
+.divider{
+    height: 1px;
+}
+
+/* 
+offers carousel
+
+*/
+.offers{
+    position: relative;
+    padding-inline: var(--fullhd-padding);
+    
+}
+.offers-header{
+    font-family: "Helvetica Neue LT GEO 55 roman";
+    font-size: 50px;
+   padding-top: 155px;
+   padding-bottom: 75px;
+   padding-left: 75px;
+}
+.offers-carousel-item{
+    position: relative;
+    max-width: 532px;
+    width: 100%;
+    height: 432px;
+    border-radius:50px;
+    overflow: hidden;
+
+}
+.offers-carousel-item-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius:50px;
+    transition: 1.2s ease;
+}
+.offers-carousel-item a:hover .offers-carousel-item-img{
+    scale: 1.5;
+}
+
+.offers-carousel-item a{
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius:50px;
+}
+.offers-carousel-item header{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    bottom:0px;
+    color: white;
+    left: 40px;
+    z-index: 2;
+    height: 120px;
+}
+.offers-carousel-item a::before{
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    z-index: 1;
+}
+.offers-carousel-item a:hover::before{
+    width: 100%;
+
+}
+.offers-carousel-item a:hover .goto-arrow{
+    width: 40px;
+    height: 12px;
+margin-left: 350px;
+}
+
+.offers-carousel-item header h1{
+    font-family: "Helvetica Neue LT GEO 95";
+    font-size: 20px;
+    
+}
+.offers-carousel-item header p{
+    font-family:'Helvetica Neue LT GEO 65' ;
+    display: block;
+    font-size: 14px;
+   max-width: 285px;
+   width: 100%;
+   margin-top: 7px;
+    
+}
+.owl-carousel .offers-carousel-item .goto-arrow{
+    transition: 750ms ease;
+    z-index: 2;
+    width: 21px;
+    height: 8px;
+    margin-top: 7px;
+  
+}
+.offers-carousel-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+}
+.carousel-progress-bar{
+position: relative;  
+  width: 80%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--tertiary-color);
+    transition: 550ms ease;
+}
+.carousel-progress-bar::before{
+    content: '';
+    position: absolute;
+    border-radius: 2px;
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: var(--progress-width, 0%);
+    background-color: var(--secondary-color);
+    z-index: 1;
+    transition: width 0.3s ease;
+
+}
+.offers-left,.offers-right{
+    width: 50px;
+    height: 50px;
+    -webkit-mask-size: contain;
+    background-color: black;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    cursor: pointer;
+}
+.offers-left{
+    -webkit-mask-image: url('../images/left.svg');
+    mask-image: url('../images/left.svg');
+    margin-right: -40px;
+}
+.offers-right{
+    -webkit-mask-image: url('../images/right.svg');
+    mask-image: url('../images/right.svg');
+}
+.offers-carousel-nav a{
+    color: var(--grey-font);
+}
+.offers-left:hover, .offers-right:hover{
+    background-color: var(--grey-font);
+}
+.services{
+    background-color: var(--primary-color);
+    margin-top: 50px;
+ 
+}
+#services-carousel{
+    height: 500px;
+}
+.services-carousel-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 500px;
+    gap: 20px;
+}
+.services main{
+    position: relative;
+
+    height: 100%;
+}
+.services-carousel-item .icon{
+    width: 132px;
+    height: 84px;
+    background-color: white;
+}
+.services-carousel-dots{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+    width: 50px;
+    z-index: 2;
+}
+.service-dot{
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--tertiary-color);
+  z-index: 2;
+    cursor: pointer;
+}
+.active-service-dot{
+    background-color: var(--secondary-color);
+    border: none;
+}
+.services-carousel-item a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 364px;
+    height: 264px;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 25px;
+    transition: all 350ms ease;
+}
+.services-carousel-item a:hover{
+    border: 1px solid var(--secondary-color);
+    transition: all 350ms ease;
+
+}
+.services-carousel-item a:hover .icon{
+    background-color: var(--secondary-color);
+    transition: all 350ms ease;
+
+}
+.services-carousel-item a:hover p{
+    color: var(--secondary-color);
+    transition: all 350ms ease;
+
+}
+.services-carousel-item a p{
+    
+    text-align: center;
+    color: white;
+    
+
+}
+.samomxmareblo{
+    -webkit-mask-image: url('../images/creditline.svg');
+    mask-image: url('../images/creditline.svg');
+}
+.ipoteka{
+    -webkit-mask-image: url('../images/house.svg');
+    mask-image: url('../images/house.svg');
+}
+.biznesi{
+    -webkit-mask-image: url('../images/biznesi.svg');
+    mask-image: url('../images/biznesi.svg');
+}
+.freelance{
+    -webkit-mask-image: url('../images/freelancer.svg');
+    mask-image: url('../images/freelancer.svg');
+}
+.car{
+    -webkit-mask-image: url('../images/car.svg');
+    mask-image: url('../images/car.svg');
+}
+.gold{
+    -webkit-mask-image: url('../images/gold.svg');
+    mask-image: url('../images/gold.svg');
+}
+.microbussines{
+    -webkit-mask-image: url('../images/microbussines.svg');
+    mask-image: url('../images/microbussines.svg');
+}
+.moneytransfer{
+    -webkit-mask-image: url('../images/moneyTransfer.svg');
+    mask-image: url('../images/moneyTransfer.svg');
+}
+
+
+
