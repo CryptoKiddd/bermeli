@@ -136,22 +136,20 @@ if(servicesCarousel.length){
 if(branchesMap.length){
     $(document).ready(function () {
         // Initialize the map
-        const map = L.map(branchesMap[0]).setView([41.9151, 43.8271], 7); // Default to Georgia
+        const map = L.map(branchesMap[0]).setView([41.9151, 43.8271], 7); 
       
         // Add OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
 
       
         // Define branches with their locations
         const branches = {
-            batumi: { coords: [41.6155, 41.6367], name: "Branch 1 - Batumi" },
-            tbilisi: { coords: [41.7167, 44.7833], name: "Branch 2 - Tbilisi" },
-            kutaisi: { coords: [42.2587, 42.7111], name: "Branch 3 - Kutaisi" },
-            poti: { coords: [42.1500, 41.6500], name: "Branch 4 - Poti" },
-            guria: { coords: [41.8833, 42.0500], name: "Branch 5 - Guria" }
+            batumi: { coords: [41.6155, 41.6367], name: "ბათუმი" },
+            tbilisi: { coords: [41.7167, 44.7833], name: "თბილისი" },
+            kutaisi: { coords: [42.2587, 42.7111], name: "ქუთაისი" },
+            poti: { coords: [42.1500, 41.6500], name: "ფოთი" },
+            guria: { coords: [41.8833, 42.0500], name: "გურია" }
         };
         $.each(branches, function (index, branch) {
             const marker = L.marker(branch.coords).addTo(map);
@@ -159,20 +157,20 @@ if(branchesMap.length){
           });
         // When a branch is selected
         $('#select-branch div').click(function () {
-            const selectedBranch = $(this).data('value'); // Get the selected branch value (from data-value)
-            const branch = branches[selectedBranch]; // Get the branch info
+            const selectedBranch = $(this).data('value'); 
+            const branch = branches[selectedBranch]; 
           
             // If a branch is selected, add the marker to the map
             if (branch) {
-              // Add a marker at the branch's location
+           
               L.marker(branch.coords).addTo(map)
                 .bindPopup(`<b>${branch.name}</b>`)
-                .openPopup(); // Open the popup immediately when the marker is added
+                .openPopup(); 
             }
           
             // Update the display text with the selected branch
-            $('#dropdown-input').text(branch.name); // Set the selected branch's name
-            $('#select-branch').hide(); // Hide the dropdown after selection
+            $('#dropdown-input').text(branch.name); 
+            $('#select-branch').hide(); 
           });
 
       });
@@ -181,25 +179,31 @@ if(branchesMap.length){
 
 
 }
+if($('#select-branch div')){
 
-$(document).ready(function () {
-    // Toggle the visibility of the dropdown on click
-    $('#dropdown-input').click(function () {
-      $('#select-branch').toggle(); // Toggle visibility of the dropdown
-    });
-
-    // When an option is selected
-    $('#select-branch div').click(function () {
-      const selectedValue = $(this).text(); // Get the selected value
-      $('#dropdown-input').text(selectedValue); // Set the selected value in the input display
-      $('#select-branch').hide(); // Hide the dropdown
-    });
-
-    // Close the dropdown if clicked outside
-    $(document).click(function (e) {
-      if (!$(e.target).closest('.custom-select-wrapper').length) {
-        $('#select-branch').hide(); // Close the dropdown if clicked outside
-      }
-    });
-  });
+ 
+        // Toggle the visibility of the dropdown on click
+        $('#dropdown-input').click(function () {
+          $('#select-branch').toggle(); 
+          $(".dropdown-arrow").toggleClass("rotate-arrow");
+        });
+    
+        // When an option is selected
+        $('#select-branch div').click(function () {
+          const selectedValue = $(this).text()
+          console.log(selectedValue)
+          $('#dropdown-input').html(selectedValue + ' <img class="dropdown-arrow" src="assets/images/dropdown-arrow.png" alt="Dropdown Arrow">'); 
+          $('#select-branch').hide(); 
+    
+        
+        });
+    
+        // Close the dropdown if clicked outside
+        $(document).click(function (e) {
+          if (!$(e.target).closest('.custom-select-wrapper').length) {
+            $('#select-branch').hide(); 
+          }
+        });
+      
+}
 

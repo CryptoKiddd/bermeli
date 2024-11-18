@@ -864,9 +864,7 @@ position: relative;
   top: 30px;
   max-height: 150px;
   font-family: "Helvetica Neue LT GEO 75 roman";
-
   overflow-y: auto;
-
   background-color: white;
   display: none;
   z-index: 1;
@@ -874,6 +872,7 @@ position: relative;
 .custom-select::-webkit-scrollbar {
   width: 1px; 
 }
+
 
 .custom-select::-webkit-scrollbar-thumb {
   background-color: var(--secondary-color); 
@@ -914,9 +913,20 @@ position: relative;
   color: var(--secondary-color); /* Text color on hover */
   padding-left: 35px;
 }
+.dropdown-arrow{
+  width: 6px;
+}
+.rotate-arrow{
+  transform: rotate(-90deg);
+  transition: 350ms ease;
+}
 
 .selected-option {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   padding: 5px;
+  align-items: center;
   cursor: pointer;
   font-family: "Helvetica Neue LT GEO 75 roman";
   color: var(--primary-color);
