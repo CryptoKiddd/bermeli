@@ -828,5 +828,157 @@ position: relative;
     mask-image: url('../images/moneyTransfer.svg');
 }
 
+.branches main{
+  display: flex;
+  height: 480px;
+}
+.branches-left{
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+  width: 50%;
+}
+.branches header{
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-family: "Helvetica Neue LT GEO 75 Roman";
+}
+.branches-map{
+  width: 50%;
+  height: 100%;
+}
+
+.custom-select-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.custom-select {
+  width: 100%;
+  padding: 5px;
+  border-bottom: 1px solid var(--primary-color);
+  position: absolute;
+  top: 30px;
+  max-height: 150px;
+  font-family: "Helvetica Neue LT GEO 75 roman";
+
+  overflow-y: auto;
+
+  background-color: white;
+  display: none;
+  z-index: 1;
+}
+.custom-select::-webkit-scrollbar {
+  width: 1px; 
+}
+
+.custom-select::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color); 
+  border-radius: 50%; 
+  width: 2px; 
+  height: 2px; 
+}
+
+.custom-select::-webkit-scrollbar-track {
+  background:var(--tertiary-color);
+  width: 2px;
+  border-radius: 50px; 
+}
+
+.custom-select div {
+  font-family: "Helvetica Neue LT GEO 55 roman";
+  position: relative;
+  color: var(--grey-font);
+  padding: 5px;
+  padding-left: 20px;
+  cursor: pointer;
+  transition: 350ms ease;
+}
+.custom-select div::before{
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 20px;
+  background-color: var(--tertiary-color);
+}
+
+.custom-select div:hover {
+  background-color: #f0f0f0; /* Background color on hover */
+  color: var(--secondary-color); /* Text color on hover */
+  padding-left: 35px;
+}
+
+.selected-option {
+  padding: 5px;
+  cursor: pointer;
+  font-family: "Helvetica Neue LT GEO 75 roman";
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--secondary-color);
+
+}
 
 
+footer{
+  display: flex;
+  justify-content: space-between;
+  height: 291px;
+  padding-inline: var(--fullhd-padding);
+  padding-top: 75px;
+
+  background-color: var(--primary-color);
+}
+
+.footer-logo{
+  width: 179px;
+  height: 148px;
+}
+footer ul{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 20px;
+}
+footer .footer-socials{
+  margin-top: 20px;
+  flex-direction: row;
+}
+footer ul li a{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+ 
+}
+footer ul li a:hover{
+  
+  color: var(--secondary-color);
+ 
+}
+footer ul li a:hover >div{
+  
+  background-color: var(--secondary-color);
+ 
+}
+.footer-btns{
+  flex-direction: column;
+}
+.icon-white{
+  background-color:white;
+  width: 25px;
+  height: 25px;
+
+}
+.copyright{
+  display: flex;
+  align-items: center;
+  height: 65px;
+  background: white;
+  justify-content: space-between;
+  padding-inline: var(--fullhd-padding);
+}
