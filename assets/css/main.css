@@ -250,6 +250,7 @@ height: 100%;
     mask-position: center;
     cursor: pointer;
   }
+  
   .icon:hover{
     background-color: var(--secondary-color);
   }
@@ -292,6 +293,14 @@ height: 100%;
 
     -webkit-mask-image: url("../images/location.svg");
   mask-image: url('../images/location.svg');
+}
+.location-grey{
+  background-color:#939393;
+  width: 20px;
+  height: 25px;
+  -webkit-mask-image: url("../images/location.svg");
+  mask-image: url('../images/location.svg');
+
 }
   .message{
     background-color:var(--secondary-color);
@@ -1268,6 +1277,7 @@ cursor: pointer;
 
 .vacancy{
   padding-inline: var(--fullhd-padding);
+  padding-bottom: var(--fullhd-padding-small);
 }
 .vacancy header{
  padding:60px 0px;
@@ -1372,6 +1382,10 @@ left: 20px;
   -webkit-mask-image: url('../images/upload.svg');
   mask-image: url('../images/upload.svg');
 }
+.mail{
+  -webkit-mask-image: url('../images/mail.svg');
+  mask-image: url('../images/mail.svg');
+}
 .cv .icon-upload{
   position: absolute;
   background-color: var(--header-color);
@@ -1391,3 +1405,33 @@ left: 20px;
   width: 100%;
   height: 201px;
 }
+.contact-btn{
+  width: 100%;
+  height: 60px;
+}
+.contact-right{
+  border:1px solid var(--tertiary-color);
+  border-radius: 25px;
+height: 300px;
+margin-left: 60px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.contact-right ul li,.contact-map-a{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.contact-map-a{
+  height: 30px;
+  padding:5px 15px;
+  margin-top: 0;
+}
+.contact-map-a:hover .icon{
+ background: red;
+}
+
