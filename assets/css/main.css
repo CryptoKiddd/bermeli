@@ -286,6 +286,13 @@ a {
   -webkit-mask-image: url("../images/linked.svg");
   mask-image: url('../images/linked.svg');
 }
+.gotoBranch {
+
+  -webkit-mask-image: url("../images/gotoBranch.svg");
+  mask-image: url('../images/gotoBranch.svg');
+  background-color: white;
+
+}
 
 .phone {
   -webkit-mask-image: url("../images/phone.svg");
@@ -1625,7 +1632,8 @@ footer ul li a:hover>div {
 }
 
 .exchange {
-  padding: 50px var(--fullhd-padding) ;
+  padding: 100px var(--fullhd-padding) ;
+  padding-bottom: 200px;
 
 }
 .exchange > header{
@@ -1706,9 +1714,7 @@ td {
   height: 25px;
 }
 
-tr:hover {
-  background-color: #ddd;
-}
+
 
 .currency-abbr {
   font-size: 14px;
@@ -1752,3 +1758,105 @@ position: relative;
   scale: 2;
 
 }
+.branches-inner{
+  position: relative;
+  height: 100dvh;
+  width: 100%;
+}
+.branches-inner header{
+ font-size: 40px;
+ color: var(--header-color);
+ font-family: "Helvetica Neue LT GEO 95";
+padding: 100px 0px;
+}
+.branches-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.296);
+}
+.branches-inner-list{
+  position: absolute;
+  background-color: white;
+  padding-inline: 115px;
+  width: 530px;
+  top: 0;
+  left: 100px;
+  height: 100%;
+  z-index: 10;
+}
+.branches-inner-map{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.accordion {
+  background-color:white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+border-bottom: 1px solid var(--tertiary-color);
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active-acc, .accordion:hover {
+  background-color: white;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+.panel li{
+  position: relative;
+  font-size: 14px;
+  color: var(--grey-font);
+  cursor: pointer;
+}
+.panel li::before{
+  content: '';
+  position: absolute;
+  left: -10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 20px;
+  top: 50%;
+transform: translateY(-50%);
+background-color: var(--header-color);
+}
+.branchpage-popup{
+  display: flex;
+  align-items: center;justify-content: space-between;
+  font-size: 12px;
+  gap: 10px;
+z-index: 10;
+  padding: 0;
+}
+.leaflet-popup, .leaflet-popup-content-wrapper{
+  z-index: 100;
+}
+.gtb-wrapper{
+  padding: 5px;
+  background-color: #00CC00;
+  border-radius: 20px;
+  transition: 350ms ease;
+  
+}
+.gtb-wrapper:hover {
+  background-color: white;
+ 
+
+}
+

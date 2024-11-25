@@ -2,6 +2,7 @@ let heroCarousel = $("#hero-carousel")
 let offersCarousel = $("#offers-carousel")
 let servicesCarousel = $("#services-carousel")
 let branchesMap = $(".branches-map")
+let branchesInnerMap = $(".branches-inner-map")
 $('.offers-left').click(function(){
     console.log('clicked')
 })
@@ -207,3 +208,96 @@ if($('#select-branch div')){
       
 }
 
+
+
+
+
+//branches map page
+
+if(branchesInnerMap.length){
+    $(document).ready(function () {
+        // Initialize the map
+        const map = L.map(branchesInnerMap[0]).setView([41.9151, 41.8271], 8); 
+      
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+
+      
+        // Define branches with their locations
+        const branches = {
+            batumi: { coords: [41.6155, 41.6367], name: "ფარნავაზ მეფის ქუჩა №93/99" },
+            tbilisi: { coords: [41.7167, 44.7833], name: "ფარნავაზ მეფის ქუჩა №222" },
+            kutaisi: { coords: [42.2587, 42.7111], name: "ფარნავაზ მეფის ქუჩა №111" },
+            poti: { coords: [42.1500, 41.6500], name: "ფარნავაზ მეფის ქუჩა №333" },
+            guria: { coords: [41.8833, 42.0500], name: "ფარნავაზ მეფის ქუჩა 444" }
+        };
+        $.each(branches, function (index, branch) {
+            const marker = L.marker(branch.coords).addTo(map);
+            marker.bindPopup(`
+
+                <div class=" branchpage-popup " >
+                 <div class="icon location" > </div>
+                <b>${branch.name}</b>
+                <div class="gtb-wrapper"> 
+                
+                  <div class="icon gotoBranch" > </div>
+                </div>
+             
+
+                </div>
+                
+                `); // Popup on click
+          });
+        // When a branch is selected
+        $('.panel li').click(function () {
+            const selectedBranch = $(this).data('value'); 
+            const branch = branches[selectedBranch]; 
+          
+            // If a branch is selected, add the marker to the map
+            if (branch) {
+           
+              L.marker(branch.coords).addTo(map)
+                .bindPopup(`
+
+                     <div class=" branchpage-popup " >
+                      <div class="icon location" > </div>
+                     <b>${branch.name}</b>
+                     <div class="gtb-wrapper"> 
+                       <div class="icon gotoBranch" > </div>
+                     </div>
+                  
+
+                     </div>
+                     
+                     `)
+                .openPopup(); 
+            }
+          
+            // Update the display text with the selected branch
+            $('#dropdown-input').text(branch.name); 
+            $('#select-branch').hide(); 
+          });
+
+      });
+      
+
+
+
+}
+
+
+
+
+let acc = $(".accordion");
+
+$(acc).each(function() {
+    $(this).on("click", function() {
+   
+      $(this).toggleClass("active-acc");
+  
+  
+      var panel = $(this).next();
+      panel.slideToggle();
+    });
+  });
