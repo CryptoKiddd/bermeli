@@ -212,12 +212,16 @@ if($('#select-branch div')){
 
 
 
-//branches map page
+//branches map seperate page
 
 if(branchesInnerMap.length){
+  let deviceWidth = $(window).width();
+
     $(document).ready(function () {
         // Initialize the map
-        const map = L.map(branchesInnerMap[0]).setView([41.9151, 41.8271], 8); 
+        let mapzoom = deviceWidth < 1380?6.5:8;
+        let lng = deviceWidth < 1380?40.81 : 41.8271;
+        const map = L.map(branchesInnerMap[0]).setView([41.9151, lng], mapzoom); 
       
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
@@ -290,14 +294,38 @@ if(branchesInnerMap.length){
 
 
 let acc = $(".accordion");
+if (acc.length) {
+  $(acc).each(function () {
+    $(this).on("click", function () {
+      // Close all other accordions
 
-$(acc).each(function() {
-    $(this).on("click", function() {
-   
+      acc.not(this).removeClass("active-acc").next().slideUp();
+
+      // Toggle the current accordion
       $(this).toggleClass("active-acc");
-  
-  
       var panel = $(this).next();
       panel.slideToggle();
     });
   });
+}
+
+if($(".menu__item > .menu__link")){
+
+  $(".menu__item > .menu__link").on("click", function (e) {
+    const submenu = $(this).next(".submenu");
+
+    // Check if the link has a submenu
+    if (submenu.length) {
+      e.preventDefault(); // Prevent default only if submenu exists
+
+      // Toggle the visibility of the submenu
+      submenu.slideToggle();
+
+      // Optionally, close other open submenus
+      $(".submenu").not(submenu).slideUp();
+    }
+  });
+}
+
+
+

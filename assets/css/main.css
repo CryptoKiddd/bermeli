@@ -548,8 +548,8 @@ a {
 }
 
 .hero-carousel-item header h1 {
-  font-family: 'Helvetica Neue LT GEO';
-  font-size: 50px;
+  font-family: 'Helvetica Neue LT GEO 65';
+  font-size: 40px;
   font-weight: bold;
   color: var(--primary-color);
   opacity: 1;
@@ -657,7 +657,7 @@ offers carousel
 }
 
 .offers-header {
-  font-family: "Helvetica Neue LT GEO 55 roman";
+  font-family: 'Helvetica Neue LT GEO 75 Roman';
   font-size: 50px;
   padding-top: 155px;
   padding-bottom: 75px;
@@ -729,7 +729,7 @@ offers carousel
 }
 
 .offers-carousel-item header h1 {
-  font-family: "Helvetica Neue LT GEO 95";
+  font-family: 'Helvetica Neue LT GEO 75 Roman';
   font-size: 20px;
 
 }
@@ -977,7 +977,7 @@ offers carousel
   font-size: 50px;
   color: var(--header-color);
   margin-bottom: 20px;
-  font-family: "Helvetica Neue LT GEO 75 Roman";
+  font-family: 'Helvetica Neue LT GEO 75 Roman';
 }
 
 .branches-map {
@@ -1151,7 +1151,7 @@ footer ul li a:hover>div {
   font-size: 40px;
   padding-bottom: 60px;
   padding-left: 20px;
-  font-family: "Helvetica Neue LT GEO 75 roman";
+  font-family: 'Helvetica Neue LT GEO 75 Roman';
   color: var(--header-color);
 }
 
@@ -1167,7 +1167,7 @@ footer ul li a:hover>div {
 
 .news-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 30px;
   width: 100%;
 
@@ -1283,7 +1283,7 @@ footer ul li a:hover>div {
   font-size: 40px;
   margin-bottom: 60px;
   color: var(--header-color);
-  font-family: "Helvetica Neue LT GEO 75 roman";
+  font-family: 'Helvetica Neue LT GEO 75 Roman';
 }
 
 .about main {
@@ -1640,7 +1640,7 @@ footer ul li a:hover>div {
   font-size: 40px;
   padding-bottom: 50px;
   color: var(--header-color);
-  font-family: "Helvetica Neue LT GEO 75 roman";
+  font-family: "Helvetica Neue LT GEO 65 roman";
 
 }
 
@@ -1766,7 +1766,7 @@ position: relative;
 .branches-inner header{
  font-size: 40px;
  color: var(--header-color);
- font-family: "Helvetica Neue LT GEO 95";
+ font-family: "Helvetica Neue LT GEO 65";
 padding: 100px 0px;
 }
 .branches-overlay{
@@ -1859,4 +1859,387 @@ z-index: 10;
  
 
 }
+.mortgage{
+  padding-inline: var(--fullhd-padding);
+}
+.mortgage header{
+  font-size: 40px;
+  padding: 70px 0px;
+  font-family: "Helvetica Neue LT GEO 65";
+  color: var(--header-color);
+}
+.mortgage main{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+.mortgage-desc{
+  max-width: 674px;
+  width: 100%;
+}
+.mortgage h3{
+  font-size: 16px;
+  font-family: "Helvetica Neue LT GEO 75";
+  color: var(--secondary-color);
+}
+.mortgage h4, .mortgage p, .mortgage li, .mortgage a {
+  font-size: 16px;
+  color: var(--grey-font);
+  font-family: "Helvetica Neue LT GEO 55 roman";
+}
 
+/* 
+1536x864	
+1366x768
+mobile 430-360 x 850-900
+*/
+
+@media(width < 1537px){
+  
+:root {
+
+  --fullhd-padding: 100px;
+  --fullhd-padding-small: 70px;
+ 
+}
+
+.bottom li{
+  padding-inline: 23px;
+}
+
+}
+
+@media(width < 1367px){
+  
+:root {
+
+  --fullhd-padding: 100px;
+  --fullhd-padding-small: 30px;
+ 
+}
+
+.bottom li{
+  padding-inline: 17px;
+}
+.services main{
+  padding-inline: var(--fullhd-padding-small);
+}
+.services-carousel-item a{
+  width: 286px;
+}
+.news-box {
+  max-width: 560px;
+}
+.vacancy-form>div>div input{
+  width: 95%;
+}
+
+}
+
+
+
+
+
+
+/* 
+nav test
+
+
+*/
+@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One|Roboto+Mono:400,700&display=swap');
+
+:root {
+  --color-primary: #18181A;
+  --color-secondary: #75757C;
+  --color-dark: #364C62;
+  --color-light: #F5F5F5;
+  --font-family-primary: 'Roboto Mono', monospace;
+  --font-family-secondary: 'Rubik Mono One', sans-serif;
+  
+  --td: 150ms;
+  --te: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+
+
+
+
+
+
+.nav-main {
+  align-items: center;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  left: -100%;
+  position: fixed;
+  transition: 
+    left 0s calc(var(--td) * 2),
+    transform 0s calc(var(--td) * 2);
+  width: 100%;
+  
+  &::before,
+  &::after {
+    content: '';
+    background-color: var(--secondary-color);
+    height: 50%;
+    left: 0;
+    position: absolute;
+    transform: translateX(-110%);
+    transform-origin: 0 50%;
+    transition: transform calc(var(--td) * 2) var(--td) var(--te);
+    width: 100%;
+    z-index: -100;
+  }
+  
+  &::before {
+    top: 0;
+  }
+  
+  &::after {
+    bottom: 0;
+  }
+  
+  .menu__item {
+    opacity: 0;
+    transform: translateX(-1rem);
+    transition: 
+      opacity var(--td) var(--te),
+      transform var(--td) var(--te);
+  }
+}
+
+
+[id="main-navigation-toggle"] {
+  opacity: 0;
+  position: fixed;
+  top: -100%;
+  
+  ~ label {
+    cursor: pointer;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 100;
+    
+    span {
+      display: block;
+      height: 2rem;
+      padding: 0.5rem;
+      position: relative;
+      transition: transform calc(var(--td) * 3) var(--te);
+      width: 2rem;
+      
+      &::before,
+      &::after {
+        background-color: var(--color-dark);
+        bottom: 0;
+        content: '';
+        height: 4px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        transition: transform calc(var(--td) * 3) var(--te);
+        top: 0;
+        width: calc(100% - 1rem);
+      }
+
+      &::before {
+        transform: rotate(0) translateY(-100%);
+      }
+
+      &::after {
+        transform: rotate(0) translateY(100%);
+      }
+    }
+  }
+}
+
+
+
+[id="main-navigation-toggle"]:checked ~ label {
+  span {
+    transform: rotate(1turn);
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+[id="main-navigation-toggle"]:checked ~ .nav-main {
+  left: 0;
+  transition: transform 0s;
+  
+  &::before,
+  &::after {
+    transform: translateX(0);
+    transition-delay: 0s;
+  }
+  
+  &::after {
+    transition-delay: calc(var(--td) / 2);
+  }
+  
+  .menu__item {
+    opacity: 1;
+    transform: translateX(0);
+    transition: 
+      opacity calc(var(--td) * 2) var(--te),
+      transform calc(var(--td) * 2) var(--te);
+  }
+  
+  @for $i from 1 through 5 {
+    .menu__item:nth-child(#{$i}) {
+      transition-delay: calc(var(--td) * 2 * (#{$i} * 0.25));
+      z-index: $i * -1;
+    }
+  }
+}
+
+
+
+.menu {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  
+  > .menu__item {
+    font-size:50px;
+  }
+}
+
+
+
+.submenu {
+
+  position: relative;
+  display: none;
+
+  width: 100%;
+  z-index: 2;
+  
+  .menu__item {
+    width: 100%;
+  
+
+  }
+  
+  .menu__link {
+    font-size: 20px;
+    color: var(--tertiary-color);
+  
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+
+
+.menu__item {
+  display: block;
+  position: relative;
+  
+  &:hover .menu__link {
+    &::before,
+    &::after {
+      animation: blink 1s var(--td) steps(1, end) forwards infinite;
+      transform: translateX(calc(100% - 0.5rem));
+      transition-duration: calc(var(--td) * 3);
+    }
+    
+    &::after {
+      transition-delay: calc(var(--td) / 2);
+    }
+  }
+  
+}
+
+
+
+.menu__link {
+  color: var(--primary-color);
+  display: inline-block;
+  font-weight: normal;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 
+    color var(--td) var(--te),
+    opacity var(--td) var(--te),
+    transform var(--td) var(--te);
+  z-index: 1;
+  
+  &::before,
+  &::after {
+    content: '';
+    background-color: var(--tertiary-color);
+    height: 50%;
+    left: 0;
+    position: absolute;
+    transform: translateX(-110%);
+    transform-origin: 0 50%;
+    transition: transform 0s var(--te);
+    width: 100%;
+    z-index: -1;
+  }
+  
+  &::before {
+    top: 0;
+  }
+  
+  &::after {
+    bottom: 0;
+  }
+}
+
+
+
+.menu:not(:focus-within):not(:hover) .menu__item {
+  .menu__link { 
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.menu__item {
+  
+  .menu__link {
+    transition-duration: calc(var(--td) * 3);
+  }
+  &:hover .menu__link {
+    color: white;
+  }
+  
+  .submenu .menu__link {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    z-index: 5;
+    margin-top: -10px;
+    
+    
+  }
+  
+
+  
+  &:hover ~ .menu__item > .menu__link {
+    transition-duration: calc(var(--td) * 3);
+    transform: translate(0, var(--pull));
+  }
+}
+
+
+
+@keyframes blink {
+  50%, 100% { opacity: 0 }
+}
