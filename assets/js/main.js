@@ -353,6 +353,19 @@ if($(".menu__item > .menu__link")){
     
   });
 }
+ const toglebtn =$('#main-navigation-toggle')
+if(toglebtn){
+
+  toglebtn.on('change', function() {
+    if ($(this).is(':checked')) {
+      // Disable scrolling when the checkbox is checked
+      $('body').css('overflow', 'hidden');
+    } else {
+      // Re-enable scrolling when the checkbox is unchecked
+      $('body').css('overflow', 'auto');
+    }
+  });
+}
 
 
 
