@@ -59,7 +59,9 @@ if (offersCarousel.length) {
         dots: false,
         nav: false,
         responsive: {
-            0: { items: 3 },
+            0: { items: 1 },
+            768:{item:2},
+            1300:{item:3}
         },
     });
 
@@ -137,7 +139,10 @@ if(servicesCarousel.length){
 if(branchesMap.length){
     $(document).ready(function () {
         // Initialize the map
-        const map = L.map(branchesMap[0]).setView([41.9151, 43.8271], 7); 
+        let deviceWidth = $(window).width();
+        let mapzoom = deviceWidth < 450?6.2:7;
+              let lng = deviceWidth < 450?40.81 : 41.8271;
+        const map = L.map(branchesMap[0]).setView([41.9151, 43.8271], mapzoom); 
       
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
@@ -220,6 +225,9 @@ if(branchesInnerMap.length){
     $(document).ready(function () {
         // Initialize the map
         let mapzoom = deviceWidth < 1380?6.5:8;
+        if(deviceWidth < 450){
+          mapzoom=6
+        }
         let lng = deviceWidth < 1380?40.81 : 41.8271;
         const map = L.map(branchesInnerMap[0]).setView([41.9151, lng], mapzoom); 
       
@@ -236,8 +244,11 @@ if(branchesInnerMap.length){
             poti: { coords: [42.1500, 41.6500], name: "ფარნავაზ მეფის ქუჩა №333" },
             guria: { coords: [41.8833, 42.0500], name: "ფარნავაზ მეფის ქუჩა 444" }
         };
+
         $.each(branches, function (index, branch) {
             const marker = L.marker(branch.coords).addTo(map);
+            const mapUrl = `https://www.google.com/maps?q=${branch.coords[0]},${branch.coords[1]}`;
+
             marker.bindPopup(`
 
                 <div class=" branchpage-popup " >
@@ -245,13 +256,16 @@ if(branchesInnerMap.length){
                 <b>${branch.name}</b>
                 <div class="gtb-wrapper"> 
                 
-                  <div class="icon gotoBranch" > </div>
+                <a  href="${mapUrl}" target="_blank" >
+
+                <div class="icon gotoBranch" > </div>
+                </a>
                 </div>
              
 
                 </div>
                 
-                `); // Popup on click
+                `); 
           });
         // When a branch is selected
         $('.panel li').click(function () {
@@ -261,20 +275,23 @@ if(branchesInnerMap.length){
             // If a branch is selected, add the marker to the map
             if (branch) {
            
-              L.marker(branch.coords).addTo(map)
-                .bindPopup(`
+              marker.bindPopup(`
 
-                     <div class=" branchpage-popup " >
-                      <div class="icon location" > </div>
-                     <b>${branch.name}</b>
-                     <div class="gtb-wrapper"> 
-                       <div class="icon gotoBranch" > </div>
-                     </div>
-                  
+                <div class=" branchpage-popup " >
+                 <div class="icon location" > </div>
+                <b>${branch.name}</b>
+                <div class="gtb-wrapper"> 
+                
+                <a  href="${mapUrl}" target="_blank" >
 
-                     </div>
-                     
-                     `)
+                <div class="icon gotoBranch" > </div>
+                </a>
+                </div>
+             
+
+                </div>
+                
+                `)
                 .openPopup(); 
             }
           
@@ -292,7 +309,7 @@ if(branchesInnerMap.length){
 
 
 
-
+//branches accordion
 let acc = $(".accordion");
 if (acc.length) {
   $(acc).each(function () {
@@ -309,6 +326,8 @@ if (acc.length) {
   });
 }
 
+
+//menu acordion
 if($(".menu__item > .menu__link")){
 
   $(".menu__item > .menu__link").on("click", function (e) {
@@ -324,6 +343,14 @@ if($(".menu__item > .menu__link")){
       // Optionally, close other open submenus
       $(".submenu").not(submenu).slideUp();
     }
+    
+
+    $("#main-navigation-toggle").on("click", function () {
+      // Slide up all open submenus when the close button or toggle button is clicked
+      $(".submenu").slideUp();
+    });
+
+    
   });
 }
 
