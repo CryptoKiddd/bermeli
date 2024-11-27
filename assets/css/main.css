@@ -2449,12 +2449,11 @@ font-size: 14px;
   display: flex;
   padding: 20px;
   padding-left: 0;
-  gap: 20px;
+  gap: 10px;
   padding-top: 23px;
 }
 .mobile-phones li{
   display: flex;
-  gap: 7px;
   color: white;
   font-size: 14px;
 }
