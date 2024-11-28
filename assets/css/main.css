@@ -239,6 +239,47 @@ a {
   gap: 45px;
   align-items: center;
 }
+.dropbtn {
+  color: var(--grey-font);
+  background-color: inherit;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--tertiary-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 5000000;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 7px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
 
 .topbar ul {
   display: flex;
@@ -255,7 +296,7 @@ a {
   color: black;
 }
 
-.icon {
+.icon{
   width: 20px;
   height: 20px;
   -webkit-mask-size: contain;
@@ -267,10 +308,23 @@ a {
   mask-position: center;
   cursor: pointer;
 }
-
-.icon:hover {
-  background-color: var(--secondary-color);
+.icon-grey{
+  width: 75px;
+  height: 75px;
+  -webkit-mask-size: contain;
+  background-color: #D8D8D8;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  cursor: pointer;
 }
+
+
+.icon:hover, .icon-grey:hover {
+  background-color: var(--secondary-color);
+} 
 
 .fb {
   -webkit-mask-image: url('../images/fb.svg');
@@ -478,7 +532,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-inline: 38px;
+  padding-inline: 36px;
   height: 100%;
   cursor: pointer;
   transition: 350ms ease-out;
@@ -491,6 +545,7 @@ a {
   align-items: center;
   justify-content: center;
   height: 100%;
+  font-family: 'Helvetica Neue LT GEO 65';
 }
 
 .bottom li::before {
@@ -863,10 +918,11 @@ menu > .menu__item{
 
 .hero-carousel-item header h1 {
   font-family: 'Helvetica Neue LT GEO 65';
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
   color: var(--primary-color);
   opacity: 1;
+  margin-bottom: 3px;
   z-index: 2;
 
 }
@@ -1204,6 +1260,8 @@ offers carousel
   border: 1px solid var(--tertiary-color);
   border-radius: 25px;
   transition: all 350ms ease;
+  font-family: 'Helvetica Neue LT GEO 75 Roman';
+
 }
 
 .services-carousel-item a:hover {
@@ -1230,6 +1288,60 @@ offers carousel
   color: white;
 
 
+}
+.services-page{
+  height: auto;
+}
+.services-inner{
+  display: flex;
+  height: auto;
+  flex-wrap: wrap;
+  padding: 50px;
+  background: white;
+}
+.services-inner a {
+  width: 330px;
+  height: 265px;
+background-color: #FAFAFA;
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+margin-bottom: 30px;
+font-family: 'Helvetica Neue LT GEO 75 Roman';
+}
+.services-inner a:hover{
+  background-color: var(--primary-color);
+}
+.services-page{
+  background: white;
+  padding-inline: var(--fullhd-padding-small);
+}
+.services-page main{
+}
+.services-page header{
+  font-size: 40px;
+  color: var(--header-color);
+  font-family: 'Helvetica Neue LT GEO 75 Roman';
+  padding-left: var(--fullhd-padding-small);
+
+  
+  
+}
+.services-page header h3{
+  font-size: 26px;
+  color: var(--secondary-color);
+  font-family: 'Helvetica Neue LT GEO 55 roman';
+  margin-top: 40px;
+  margin-bottom: 50px;
+  
+  
+}
+.services-inner a:hover .icon-grey{
+  background-color: white;
+}
+.services-inner a:hover p{
+color: white;
+}
+.services-inner a p{
+  color: var(--primary-color);
 }
 
 .samomxmareblo {
@@ -1398,6 +1510,11 @@ footer {
 
   background-color: var(--primary-color);
 }
+.white-footer{
+  background: white;
+border-bottom: 1px solid var(--primary-color);
+border-top: 1px solid var(--primary-color);
+}
 
 .footer-logo {
   width: 179px;
@@ -1408,12 +1525,33 @@ footer ul {
   display: flex;
   flex-direction: column;
   color: white;
+  font-family: 'Helvetica Neue LT GEO 65';
   gap: 20px;
 }
+.white-footer ul{
+  color: var(--primary-color);
+}
+.white-footer .footer-logo{
+  width: 110px;
+  height: 160px;
+  padding-inline: var(--fullhd-padding-small);
+  box-sizing: content-box;
+  border-right: 1px solid var(--tertiary-color);
+  border-left: 1px solid var(--tertiary-color);
 
+}
+.white-footer .footer-socials{
+  justify-content: center;
+  width: 100%;
+}
 footer .footer-socials {
   margin-top: 20px;
   flex-direction: row;
+}
+.white-footer .footer-contacts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 footer ul li a {
@@ -1445,6 +1583,7 @@ footer ul li a:hover>div {
   height: 25px;
 
 }
+
 
 .copyright {
   display: flex;
@@ -2218,7 +2357,7 @@ mobile 430-360 x 850-900
 }
 
 .bottom li{
-  padding-inline: 23px;
+  padding-inline: 21px;
 }
 
 }
@@ -2233,7 +2372,7 @@ mobile 430-360 x 850-900
 }
 
 .bottom li{
-  padding-inline: 17px;
+  padding-inline: 15px;
 }
 .services main{
   padding-inline: var(--fullhd-padding-small);
@@ -2287,9 +2426,7 @@ nav test
     --fullhd-padding-small: 10px;
    
   }
-  .hero{
-    height: 100vh;
-  }
+
   .hero-carousel-item header p{
     font-size: 12px;
     margin-top: 0;
@@ -2312,14 +2449,14 @@ nav test
     font-size: 30px;
   }
   .hero .owl-carousel .owl-item{
-    height: 100vh;
+    height: 80vh;
   }
   .hero-carousel-dots{
-    bottom: 260px;
+    bottom: 277px;
   }
   .offers-header, .branches header{
     font-size: 30px;
-    padding-top: 72px;
+    padding-top: 32px;
   }
   .btn{
     font-size: 14px;
@@ -2374,7 +2511,7 @@ font-size: 14px;
   width: 150px;
 }
 .team header{
-  padding-top: 0;
+  padding-top: 30px;
 }
 .team ul{
   flex-direction: column;
@@ -2444,12 +2581,15 @@ font-size: 14px;
      }
   }
 }
+.menu{
+  margin-top: 50%;
+}
 
 .mobile-phones{
   display: flex;
   padding: 20px;
   padding-left: 0;
-  gap: 1git a0px;
+  gap: 5px;
   padding-top: 23px;
 }
 .mobile-phones li{
@@ -2537,7 +2677,49 @@ width: 100%;}
 .about main div p{
   font-size: 50px;
 }
+.services-page header{
+  font-size: 30px;
+}
+.services-inner{
+  height: auto;
+}
+.services-page header p{
+  font-size: 20px;
+}
+.white-footer .footer-contacts{
+  align-items: start;
+}
+.white-footer .footer-contacts ul{
+  align-items: start;
+}
+.white-footer .footer-socials{
+  justify-content: start;
+}
+.white-footer .footer-logo{
+  padding-inline: 0;
+  border: none;
+}
 
+.services-inner a p{
+  font-size: 14px;
+  
+}
+.services-inner a{
+  margin-bottom: 0;
+  width: 180px;
+}
+.services-inner{
+  gap: 10px;
+  justify-content: space-between;
+
+}
+.services-page main{
+  padding-inline: 0;
+  padding-bottom: 50px;
+}
+.copyright span{
+  font-size: 12px;
+}
 
 
 
