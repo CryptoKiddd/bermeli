@@ -22,6 +22,20 @@
   font-display: swap;
 }
 
+
+@font-face {
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
+  src: url('../fonts/HelveticaNeueLTGEOCaps-55Rmn.eot');
+  src: url('../fonts/HelveticaNeueLTGEOCaps-55Rmn.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/HelveticaNeueLTGEOCaps-55Rmn.woff2') format('woff2'),
+      url('../fonts/HelveticaNeueLTGEOCaps-55Rmn.woff') format('woff'),
+      url('../fonts/HelveticaNeueLTGEOCaps-55Rmn.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 @font-face {
   font-family: 'Helvetica Neue LT GEO 75 Roman';
   src: url('../fonts/HelveticaNeueLTGEO-75Bold.eot');
@@ -29,6 +43,28 @@
     url('../fonts/HelveticaNeueLTGEO-75Bold.woff2') format('woff2'),
     url('../fonts/HelveticaNeueLTGEO-75Bold.woff') format('woff'),
     url('../fonts/HelveticaNeueLTGEO-75Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica Neue LT GEO 75 Caps';
+  src: url('../fonts/HelveticaNeueLTGEOCaps-75Bold.eot');
+  src: url('../fonts/HelveticaNeueLTGEOCaps-75Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HelveticaNeueLTGEOCaps-75Bold.woff2') format('woff2'),
+    url('../fonts/HelveticaNeueLTGEOCaps-75Bold.woff') format('woff'),
+    url('../fonts/HelveticaNeueLTGEOCaps-75Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica Neue LT GEO 85';
+  src: url('../fonts/HelveticaNeueLTGEO-85Heavy.eot');
+  src: url('../fonts/HelveticaNeueLTGEO-85Heavy?#iefix') format('embedded-opentype'),
+    url('../fonts/HelveticaNeueLTGEO-85Heavy.woff2') format('woff2'),
+    url('../fonts/HelveticaNeueLTGEO-85Heavy.woff') format('woff'),
+    url('../fonts/HelveticaNeueLTGEO-85Heavy.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -499,6 +535,8 @@ a {
   transition: 350ms ease;
   cursor: pointer;
   border: 1px solid var(--secondary-color);
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
+
 
 }
 
@@ -512,7 +550,7 @@ a {
   width: 160px;
   height: 36px;
   color: white;
-  font-family: "Helvetica Neue LT GEO";
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
   font-weight: bold;
   font-size: 14px;
   padding-right: 10px;
@@ -532,7 +570,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-inline: 36px;
+  padding-inline: 33px;
   height: 100%;
   cursor: pointer;
   transition: 350ms ease-out;
@@ -545,7 +583,7 @@ a {
   align-items: center;
   justify-content: center;
   height: 100%;
-  font-family: 'Helvetica Neue LT GEO 65';
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
 }
 
 .bottom li::before {
@@ -917,7 +955,7 @@ menu > .menu__item{
 }
 
 .hero-carousel-item header h1 {
-  font-family: 'Helvetica Neue LT GEO 65';
+  font-family: 'Helvetica Neue LT GEO 75 Caps';
   font-size: 50px;
   font-weight: bold;
   color: var(--primary-color);
@@ -941,7 +979,8 @@ menu > .menu__item{
   position: absolute;
   background-color: white;
   top: 129px;
-  font-family: " Helvetica Neue LT GEO";
+  font-family: 'halvetica-italic';
+  
 
   right: 0px;
   max-width: 800px;
@@ -950,7 +989,7 @@ menu > .menu__item{
   padding-left: 25px;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-  font-size: 40px;
+  font-size: 43px;
   color: var(--primary-color);
 
 }
@@ -960,6 +999,7 @@ menu > .menu__item{
   height: 36px;
   width: 160px;
   margin-bottom: -19px;
+  font-size: 14px;
 }
 
 .hero-carousel-dots {
@@ -1027,7 +1067,7 @@ offers carousel
 }
 
 .offers-header {
-  font-family: 'Helvetica Neue LT GEO 75 Roman';
+  font-family: 'Helvetica Neue LT GEO 75 Caps';
   font-size: 50px;
   padding-top: 155px;
   padding-bottom: 75px;
@@ -1099,8 +1139,8 @@ offers carousel
 }
 
 .offers-carousel-item header h1 {
-  font-family: 'Helvetica Neue LT GEO 75 Roman';
-  font-size: 20px;
+  font-family: 'Helvetica Neue LT GEO 75 Caps';
+  font-size: 18px;
 
 }
 
@@ -1186,7 +1226,7 @@ offers carousel
 
 .offers-left:hover,
 .offers-right:hover {
-  background-color: var(--grey-font);
+  background-color: var(--primary-color);
 }
 
 .services {
@@ -1285,6 +1325,8 @@ offers carousel
 .services-carousel-item a p {
 
   text-align: center;
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
+
   color: white;
 
 
@@ -1319,7 +1361,7 @@ font-family: 'Helvetica Neue LT GEO 75 Roman';
 .services-page header{
   font-size: 40px;
   color: var(--header-color);
-  font-family: 'Helvetica Neue LT GEO 75 Roman';
+  font-family: 'Helvetica Neue LT GEO 75 Caps';
   padding-left: var(--fullhd-padding-small);
 
   
@@ -1328,9 +1370,7 @@ font-family: 'Helvetica Neue LT GEO 75 Roman';
 .services-page header h3{
   font-size: 26px;
   color: var(--secondary-color);
-  font-family: 'Helvetica Neue LT GEO 55 roman';
   margin-top: 40px;
-  margin-bottom: 50px;
   
   
 }
@@ -1398,12 +1438,15 @@ color: white;
   align-items: start;
   width: 50%;
 }
+.branches-left p{
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
+}
 
 .branches header {
   font-size: 50px;
   color: var(--header-color);
   margin-bottom: 20px;
-  font-family: 'Helvetica Neue LT GEO 75 Roman';
+  font-family: 'Helvetica Neue LT GEO 75 Caps';
 }
 
 .branches-map {
@@ -1557,6 +1600,8 @@ footer .footer-socials {
 footer ul li a {
   display: flex;
   align-items: center;
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
+
   gap: 10px;
 
 }
@@ -1604,7 +1649,7 @@ footer ul li a:hover>div {
   font-size: 40px;
   padding-bottom: 60px;
   padding-left: 20px;
-  font-family: 'Helvetica Neue LT GEO 75 Roman';
+  font-family: 'Helvetica Neue LT GEO 75 Caps';
   color: var(--header-color);
 }
 
@@ -1650,7 +1695,7 @@ footer ul li a:hover>div {
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
-  padding: 10px;
+  padding: 22px;
   color: white;
   width: calc(100% - 299px);
   height: 100%;
@@ -1687,6 +1732,8 @@ footer ul li a:hover>div {
 }
 
 .news-box-right p {
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
+
   font-size: 14px;
   color: white;
 }
@@ -1736,7 +1783,7 @@ footer ul li a:hover>div {
   font-size: 40px;
   margin-bottom: 60px;
   color: var(--header-color);
-  font-family: 'Helvetica Neue LT GEO 75 Roman';
+  font-family: 'Helvetica Neue LT GEO 75 Caps';
 }
 
 .about main {
@@ -1840,7 +1887,7 @@ footer ul li a:hover>div {
 
 .person-bottom h4 {
   font-size: 16px;
-  font-family: "Helvetica Neue LT GEO 75 roman";
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
   margin-bottom: 7px;
 
   color: var(--primary-color);
@@ -1902,7 +1949,7 @@ footer ul li a:hover>div {
   padding: 60px 0px;
   font-size: 40px;
   color: var(--header-color);
-  font-family: "Helvetica Neue LT GEO 75 roman";
+  font-family: "Helvetica Neue LT GEO 75 Caps";
 }
 
 .vacancy-form {
@@ -1955,6 +2002,7 @@ footer ul li a:hover>div {
 }
 
 .vacancy-form>div>div label {
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
   position: absolute;
   top: -30px;
   left: 20px;
@@ -2093,7 +2141,7 @@ footer ul li a:hover>div {
   font-size: 40px;
   padding-bottom: 50px;
   color: var(--header-color);
-  font-family: "Helvetica Neue LT GEO 75 roman";
+  font-family: "Helvetica Neue LT GEO 75 Caps";
 
 }
 
@@ -2211,6 +2259,10 @@ position: relative;
   scale: 2;
 
 }
+.offers-carousel-nav a:hover{
+  color: var(--secondary-color);
+
+}
 .branches-inner{
   position: relative;
   height: 100dvh;
@@ -2219,8 +2271,8 @@ position: relative;
 .branches-inner header{
  font-size: 40px;
  color: var(--header-color);
- font-family: "Helvetica Neue LT GEO 65";
-padding: 100px 0px;
+ font-family: 'Helvetica Neue LT GEO 75 Roman';
+ padding: 100px 0px;
 }
 .branches-overlay{
   position: absolute;
@@ -2318,7 +2370,7 @@ z-index: 10;
 .mortgage header{
   font-size: 40px;
   padding: 70px 0px;
-  font-family: "Helvetica Neue LT GEO 65";
+  font-family: 'Helvetica Neue LT GEO 75 Caps';
   color: var(--header-color);
 }
 .mortgage main{
@@ -2332,7 +2384,7 @@ z-index: 10;
 }
 .mortgage h3{
   font-size: 16px;
-  font-family: "Helvetica Neue LT GEO 75";
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
   color: var(--secondary-color);
 }
 .mortgage h4, .mortgage p, .mortgage li, .mortgage a {
@@ -2357,7 +2409,7 @@ mobile 430-360 x 850-900
 }
 
 .bottom li{
-  padding-inline: 21px;
+  padding-inline: 18px;
 }
 
 }
@@ -2372,7 +2424,7 @@ mobile 430-360 x 850-900
 }
 
 .bottom li{
-  padding-inline: 15px;
+  padding-inline: 12px;
 }
 .services main{
   padding-inline: var(--fullhd-padding-small);
@@ -2721,7 +2773,9 @@ width: 100%;}
   font-size: 12px;
 }
 
-
+.panel li{
+  font-size: 12px;
+}
 
 }
 
