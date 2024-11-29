@@ -743,6 +743,9 @@ font-size: 14px;
 
 [id="main-navigation-toggle"]:checked ~ .nav-main {
   left: 0;
+  transform: translateY(70px);
+  transition: top 350ms ease;
+
   transition: transform 0s;
   
   &::before,
@@ -752,7 +755,7 @@ font-size: 14px;
   }
   
   &::after {
-    transition-delay: calc(var(--td) / 2);
+    transition-delay: calc(var(--td)  / 1.5 );
   }
   
   .menu__item {
@@ -763,12 +766,12 @@ font-size: 14px;
       transform calc(var(--td) * 2) var(--te);
   }
   
-  @for $i from 1 through 5 {
-    .menu__item:nth-child(#{$i}) {
-      transition-delay: calc(var(--td) * 2 * (#{$i} * 0.25));
-      z-index: $i * -1;
+
+    .menu__item:nth-child() {
+      transition-delay: calc(var(--td) * 10  * 0.25);
+ 
     }
-  }
+  
 }
 
 
@@ -983,14 +986,14 @@ menu > .menu__item{
   
 
   right: 0px;
-  max-width: 800px;
+  max-width: 780px;
   width: 100%;
-  padding: 10px;
   padding-left: 25px;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   font-size: 43px;
   color: var(--primary-color);
+  height: 88px;
 
 }
 
@@ -1974,7 +1977,7 @@ footer ul li a:hover>div {
 .vacancy-form>div>div input {
   height: 60px;
   border: 1px solid var(--tertiary-color);
-  border-radius: 25px;
+  border-radius: 50px;
   width: 100%;
   padding-left: 50px;
   transition: 350ms ease;
@@ -2467,6 +2470,7 @@ nav test
     top: 0px;
     height: 70px;
     background-color: white;
+    border-bottom: 1px solid var(--tertiary-color);
     z-index: 1500000;
   }
 
