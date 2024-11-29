@@ -250,6 +250,7 @@ if (branchesInnerMap.length) {
     }
     let lng = deviceWidth < 1380 ? 40.81 : 41.8271;
     const map = L.map(branchesInnerMap[0]).setView([41.9151, lng], mapzoom);
+    const markers = {};
 
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
@@ -272,47 +273,35 @@ if (branchesInnerMap.length) {
       marker.bindPopup(`
 
                 <div class=" branchpage-popup " >
-                 <div class="icon location" > </div>
-                <b>${branch.name}</b>
-                <div class="gtb-wrapper"> 
-                
-                <a  href="${mapUrl}" target="_blank" >
-
-                <div class="icon gotoBranch" > </div>
-                </a>
-                </div>
-             
-
+                    <div class="icon location" > </div>
+                     <b>${branch.name}</b>
+                    <div class="gtb-wrapper"> 
+                        <a  href="${mapUrl}" target="_blank" >
+                           <div class="icon gotoBranch" > </div>
+                        </a>
+                     </div>
                 </div>
                 
                 `);
+
+                markers[index] = marker;
+
     });
     // When a branch is selected
     $('.panel li').click(function () {
       const selectedBranch = $(this).data('value');
       const branch = branches[selectedBranch];
+      const marker = markers[selectedBranch]; 
 
-      // If a branch is selected, add the marker to the map
-      if (branch) {
+      console.log(branch)
 
-        marker.bindPopup(`
 
-                <div class=" branchpage-popup " >
-                 <div class="icon location" > </div>
-                <b>${branch.name}</b>
-                <div class="gtb-wrapper"> 
-                
-                <a  href="${mapUrl}" target="_blank" >
-
-                <div class="icon gotoBranch" > </div>
-                </a>
-                </div>
-             
-
-                </div>
-                
-                `)
-          .openPopup();
+      if (branch && marker) {
+        marker.openPopup();
+            $('#dropdown-input').text(branch.name);
+        $('#select-branch').hide();
+      } else {
+        console.error("Branch or marker not found for:", selectedBranch);
       }
 
       // Update the display text with the selected branch
