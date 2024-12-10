@@ -88,6 +88,39 @@ if (offersCarousel.length) {
 //services carousel
 
 if (servicesCarousel.length) {
+  if($(window).width() <= 440 ){
+    let combinedItems = [];
+ 
+    $(".services-carousel-item a").each(function(index){
+      
+      if (index % 2 === 0) {
+        // Start a new pair
+        let combinedHTML = $(this).prop('outerHTML');
+        if ($(this).next().length) {
+          combinedHTML += $(this).next().prop('outerHTML');
+        }
+        combinedItems.push(`<div class="item services-carousel-item">${combinedHTML}</div>`);
+      }
+
+    })
+
+
+    let $dotsContainer = $(".services-carousel-dots");
+    $dotsContainer.empty(); 
+    combinedItems.forEach((_, index) => {
+      $dotsContainer.append(`<span class="service-dot" data-dot="${index}"></span>`);
+    });
+
+    $("#services-carousel").html(combinedItems.join(''));
+      $("#services-carousel").owlCarousel('destroy'); 
+    $("#services-carousel").owlCarousel({
+      items: 1, // Show one item (contains two anchors)
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: true,
+    });
+  }
   servicesCarousel.owlCarousel({
     loop: true,
     margin: 10,
@@ -109,6 +142,10 @@ if (servicesCarousel.length) {
     var index = $(this).data('dot');
     servicesCarousel.trigger('to.owl.carousel', [index, 1200]); // Navigate to the corresponding slide
   });
+
+
+
+
   servicesCarousel.on('changed.owl.carousel', function (event) {
     var currentIndex = event.item.index;  // 
 
@@ -131,6 +168,10 @@ if (servicesCarousel.length) {
   $('.service-dot[data-dot="0"]').addClass('active-service-dot');
 
 }
+
+
+
+
 
 
 //map for branches
@@ -374,6 +415,51 @@ if (toglebtn) {
       $('body').css('overflow', 'auto');
     }
   });
+}
+
+const creditForm = $('.credit-form')
+console.log(creditForm)
+
+if(creditForm){
+
+  
+  creditForm.on("submit", function(e){
+    e.preventDefault()
+
+  
+    let agreedToTerms=$("#terms").prop('checked')
+    let creditAmount = $('#cr-amount').val()
+    console.log(creditAmount)
+
+    if(creditAmount > 3000){
+      $('#warning-message').show()
+    }else{
+      $('#warning-message').hide()
+    }
+
+    let selectedBackup = [];
+
+    $('.backup-type input[type="checkbox"]').each(function() {
+      if ($(this).prop('checked')) { 
+        selectedBackup.push($(this).attr('value')); // Get the value attribute of the checkbox
+    }
+    });
+
+
+    
+    console.log("Selected backup options: ", selectedBackup);
+    if(!agreedToTerms){
+      $("#term-text").css("color", "red");
+
+    }else{
+      $("#term-text").css("color", "black");
+
+    }
+
+
+
+  })
+
 }
 
 

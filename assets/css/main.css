@@ -4,7 +4,7 @@
   src: url('../fonts/HelveticaNeueLTGEO-55Roman.eot?#iefix') format('embedded-opentype'),
     url('../fonts/HelveticaNeueLTGEO-55Roman.woff2') format('woff2'),
     url('../fonts/HelveticaNeueLTGEO-55Roman.woff') format('woff'),
-    url('../fonts/HelveticaNeueLTGEO-55Roman.ttf') format('truetype');
+    url('../fonts/HelveticaNeueLTGEO-55Roman.tFtf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -215,6 +215,10 @@ select {
   font: inherit;
 }
 
+::selection {
+  color: white;/* Text color when selected */
+  background: var(--secondary-color); /* Background color when selected */
+}
 /*
       7. Avoid text overflows
     */
@@ -297,7 +301,7 @@ a {
   top: 15px;
   background-color: var(--tertiary-color);
   min-width: 110px;
-  z-index: 5000000;
+  z-index: 500000000;
 }
 
 /* Links inside the dropdown */
@@ -370,6 +374,7 @@ a {
   mask-image: url('../images/fb.svg');
 }
 
+
 .arr {
   -webkit-mask-image: url('../images/gotoArrow.svg');
   mask-image: url('../images/gotoArrow.svg');
@@ -425,6 +430,10 @@ a {
   -webkit-mask-image: url("../images/location.svg");
   mask-image: url('../images/location.svg');
 
+}
+.lari{
+  -webkit-mask-image: url("../images/lari.svg");
+  mask-image: url('../images/lari.svg');
 }
 
 .message {
@@ -2419,6 +2428,168 @@ z-index: 10;
   opacity: 0.8;
 }
 
+.credit-form{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.vacancy-form .credit-credentials{
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  padding-inline:20px;
+  flex-wrap: wrap;
+  background-color:rgba(128, 128, 128, 0.04);
+  border-radius: 50px;
+  
+}
+.vacancy-form .credit-credentials h3{
+  width: 100%;
+  padding-bottom: 80px;
+  padding-left: 20px;
+  font-size: 16px;
+  color: var(--primary-color);
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
+
+}
+.vacancy-form .credit-credentials > div{
+
+  max-width: 500px;
+}
+.vacancy-form .credit-credentials > div input{
+  background-color:rgba(128, 128, 128, 0.01);
+  font-family: 'Helvetica Neue LT GEO 55 Roman';
+  border-radius: 50px;
+}
+.vacancy-form .credit-credentials > div label{
+  font-family: 'Helvetica Neue LT GEO 55 Roman';
+ 
+}
+.checkbox-container {
+
+  display: flex;
+  padding-left: 30px;
+  max-width: 575px;
+  width: 100%;
+}
+
+.checkbox-container input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  position: relative;
+  margin-top: 4px;
+  width: 19px;
+  height: 18px;
+  border: 2px solid #707070;
+  cursor: pointer;
+}
+
+
+
+.custom-checkbox:after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background-color:red;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .custom-checkbox:after {
+  display: block;
+  background-color: var(--secondary-color);
+}
+
+.checkbox-container span {
+  margin-left: 10px;
+  font-family: 'Helvetica Neue LT GEO 55 Roman';
+
+  font-size: 16px;
+
+}
+.credit-form>div>.credit-amount{
+  position: relative;
+  margin-bottom: 0;
+}
+.credit-amount .credit-label{
+  position: relative;
+}
+.lari{
+  position: absolute;
+  right:-110%;
+  bottom: -69px;
+  width: 14px;
+  height: 16px;
+}
+.credit-btn{
+  max-width: 670px;
+  padding: 15px;
+  border-radius:50px ;
+  font-family: 'Helvetica Neue LT GEO 75 Caps';
+  font-size: 22px;
+
+}
+
+.less-than-3k-message{
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 0;
+  margin-top: 20px;
+  height: 200px;
+  display: none;
+}
+#warning-message p{
+  color: red;
+  margin-bottom: 30px;
+}
+.backup-type{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.backup-type .custom-checkbox{
+  border-radius: 10px;
+  position: relative;
+
+}
+.backup-type .checkbox-container{
+  display: flex;
+  width: 45%;
+}
+.backup-type .checkbox-container label{
+position: relative;
+width: 100%;
+top: initial;
+left: 15px;
+
+}
+.backup-type .checkbox-container span{
+position: absolute;
+width: 100%;
+top: 2px;
+left: inherit;
+
+}
+.backup-type .custom-checkbox::after{
+  border-radius: 10px;
+
+}
+.backup-type li{
+  height: 20px;
+
+
+}
+.vacancy-form  .credit-3000{
+  padding-right: 120px;
+}
+
+
 /* 
 1536x864	
 1366x768
@@ -2466,17 +2637,6 @@ mobile 430-360 x 850-900
 }
 
 }
-
-
-
-
-
-
-/* 
-nav test
-
-
-*/
 
 
 
@@ -2576,7 +2736,7 @@ nav test
     height: auto;
   }
 .services-carousel-item{
-  height: 100vh;
+  height: 60vh;
   flex-wrap: wrap;
   padding: 10px 0;
 }
@@ -2587,7 +2747,11 @@ font-size: 14px;
 }
 .services-carousel-dots{
   flex-direction: row;
-  width: 150px;
+  justify-content: center;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  top: 80%;
 }
 .team header{
   padding-top: 30px;
@@ -2803,10 +2967,28 @@ width: 100%;}
 .panel li{
   font-size: 12px;
 }
-
+.vacancy-form .credit-3000{
+  padding-right: 20px;
+}
+.backup-type{
+  justify-content: space-between;
+}
+.backup-type .checkbox-container{
+  padding-left: 0;
+}
+#warning-message p{
+  width: 100%;
+  font-size: 14px;
+}
+.backup-type .checkbox-container span{
+  font-size: 14px;
+}
+.checkbox-container span{
+  font-size: 12px;
+  max-width: 250px;
 }
 
-
+}
 
 
 
