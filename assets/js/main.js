@@ -462,5 +462,18 @@ if(creditForm){
 
 }
 
+const cityDrop = $('#city-drop')
+const cityInput = $('#credit-city')
+const closeDrop = $('#close-dropdown')
+if (cityDrop.length && cityInput.length && closeDrop.length) {
+  cityDrop.hide()
+  cityInput.on('click', function () {
+    cityDrop.show(); // Show the dropdown
+  });
+
+  closeDrop.on('click', function () {
+    cityDrop.hide(); // Hide the dropdown
+  });
+}
 
 

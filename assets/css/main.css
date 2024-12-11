@@ -1454,6 +1454,7 @@ color: white;
 
 .branches-left {
   padding: 100px;
+  padding-inline: var(--fullhd-padding-small);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -1566,26 +1567,28 @@ color: white;
 
 }
 
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  height: 291px;
-  padding-inline: var(--fullhd-padding);
-  padding-top: 75px;
-
-  background-color: var(--primary-color);
-}
 .white-footer{
   background: white;
 border-bottom: 1px solid var(--primary-color);
 border-top: 1px solid var(--primary-color);
 }
 
-.footer-logo {
-  width: 179px;
-  height: 148px;
+footer {
+  display: flex;
+  justify-content: space-between;
+  height: 291px;
+  padding-inline: var(--fullhd-padding-small);
+  padding-top: 75px;
+  background-color: var(--primary-color);
 }
+
+
+.footer-logo {
+  position: relative;
+padding-inline: 40px; 
+ height: 148px; 
+}
+
 
 footer ul {
   display: flex;
@@ -2029,7 +2032,8 @@ footer ul li a:hover>div {
   font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
   position: absolute;
   top: -30px;
-  left: 20px;
+  /* left: 20px; */
+  margin-left: 20px;
 
 }
 
@@ -2427,7 +2431,11 @@ z-index: 10;
   color: #1B6800;
   opacity: 0.8;
 }
-
+/* 
+//////////////////////
+                    forms pages
+//////////////////////////
+*/
 .credit-form{
   display: flex;
   flex-direction: column;
@@ -2454,7 +2462,7 @@ z-index: 10;
 }
 .vacancy-form .credit-credentials > div{
 
-  max-width: 500px;
+  max-width: 590px;
 }
 .vacancy-form .credit-credentials > div input{
   background-color:rgba(128, 128, 128, 0.01);
@@ -2521,7 +2529,7 @@ z-index: 10;
 }
 .lari{
   position: absolute;
-  right:-110%;
+  right:-145%;
   bottom: -69px;
   width: 14px;
   height: 16px;
@@ -2588,6 +2596,97 @@ left: inherit;
 .vacancy-form  .credit-3000{
   padding-right: 120px;
 }
+
+.vacancy-form .credit-credentials .input-group{
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+.vacancy-form .credit-credentials .input-group div{
+  flex: 1;
+}
+
+.dropdown-input{
+  position: relative;
+}
+.dropdown-forms{
+  position: absolute;
+  background-color:white;
+  padding: 25px;
+  border-radius: 25px;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  min-height: 300px;
+  height: auto;
+  border: 2px solid #808080;
+}
+.dropdown-forms li{
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(112, 112, 112, 0.1);
+
+}
+.vacancy-form>div> .dropdown-input .dropdown-forms label{
+  position: relative;
+  font-family: 'Helvetica Neue LT GEO 55 Roman';
+  left: inherit;
+  top: inherit;
+  color: var(--grey-font);
+  width: 100%;
+}
+.vacancy-form>div> .dropdown-input .dropdown-forms input{
+  display: block;
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%; /* Makes it circular */
+  outline: none;
+  cursor: pointer;
+  background: #fff;
+  transition: background 0.3s, border-color 0.3s;
+  right: 20px;
+ 
+}
+.vacancy-form>div> .dropdown-input .dropdown-forms input[type="radio"]:checked {
+  border: 5px solid var(--secondary-color) ;
+}
+.dropdown-input  label:has(input[type="radio"]:checked) {
+  color: black;
+}
+footer{
+  position: relative;
+  overflow: hidden;
+  background-image:url(../../assets/images/footerPattern.png);
+}
+footer ul, footer div, footer a{
+  z-index: 3;
+}
+#close-dropdown{
+  position: absolute;
+  padding-left: 0;
+  margin-left: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 50px;
+  text-decoration: underline;
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
+
+  left: 0;
+  background-color: white;
+  text-align: center;
+  font-size: 14px;
+  height: 50px;
+}
+
 
 
 /* 
