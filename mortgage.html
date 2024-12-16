@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
     <link rel="stylesheet" href="assets/css/main.css">
     <title>მთავარი გვერდი</title>
 </head>
@@ -219,6 +221,64 @@
                 <img src="assets/images/tractor.jpg" alt="">
             </div>
         </main>
+
+<div class="mortgage-submenu">
+
+<div class="sliders">
+
+
+    <div class="slider-container">
+        <label class="slider-label" for="slider"> სესხის ოდენობა</label>
+        <div id="slider"></div>
+        <div class="slider-value">
+            <input type="number" id="slider-value" placeholder="ლ" max="30000">
+          
+        </div>
+    </div>
+
+    <div class="slider-container">
+        <label class="slider-label" for="slider"> თვეების ოდენობა</label>
+        <div id="slider-months"></div>
+        <div class="slider-value">
+            <input type="number" id="slider-months-value" placeholder="თვე" max="180">
+          
+        </div>
+    </div>
+</div>
+
+
+<div class="credit-nav">
+    <ul>
+        <li>
+            <a href="mortgageBacked.html">იპოთეკური</a>
+        </li>
+        <li>
+            <a href="credit.html">სამომხმარებლო</a>
+        </li>
+        <li>
+            <a href="autocredit.html">თვითდასაქმებულებზე</a>
+        </li>
+        <li>
+            <a href="autocredit.html">ემიგრანტებისთვის</a>
+        </li>
+        <li>
+            <a href="autocredit.html">ავტოსესხი</a>
+        </li>
+        <li>
+            <a href="autocredit.html">სალომბარდო სესხი</a>
+        </li>
+        <li>
+            <a href="autocredit.html">ბიზნეს სესხი</a>
+        </li>
+        <li>
+            <a href="autocredit.html">ფულადი  გზავნილები</a>
+        </li>
+    </ul>
+</div>
+</div>
+        
+        
+        
     </section>
     
 
@@ -284,10 +344,16 @@
         </a>
         <span>ყველა უფლება დაცულია ©2024</span>
     </div>
-
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
     <script defer src="assets/js/main.js"></script>
+    <script>
+        $( function() {
+          $( "#slider" ).slider();
+        } );
+        </script>
 </body>
 
 </html>

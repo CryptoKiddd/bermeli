@@ -18,11 +18,11 @@ if (heroCarousel.length) {
 
   // custom dots for hero carosuel,
   $('.hero-dot').click(function () {
-    var index = $(this).data('dot');
+    let index = $(this).data('dot');
     heroCarousel.trigger('to.owl.carousel', [index, 500]); // Navigate to the corresponding slide
   });
   heroCarousel.on('changed.owl.carousel', function (event) {
-    var currentIndex = event.item.index;  // 
+    let currentIndex = event.item.index;  // 
 
 
     currentIndex = currentIndex - event.relatedTarget._clones.length / 2;
@@ -88,11 +88,11 @@ if (offersCarousel.length) {
 //services carousel
 
 if (servicesCarousel.length) {
-  if($(window).width() <= 440 ){
+  if ($(window).width() <= 440) {
     let combinedItems = [];
- 
-    $(".services-carousel-item a").each(function(index){
-      
+
+    $(".services-carousel-item a").each(function (index) {
+
       if (index % 2 === 0) {
         // Start a new pair
         let combinedHTML = $(this).prop('outerHTML');
@@ -106,13 +106,13 @@ if (servicesCarousel.length) {
 
 
     let $dotsContainer = $(".services-carousel-dots");
-    $dotsContainer.empty(); 
+    $dotsContainer.empty();
     combinedItems.forEach((_, index) => {
       $dotsContainer.append(`<span class="service-dot" data-dot="${index}"></span>`);
     });
 
     $("#services-carousel").html(combinedItems.join(''));
-      $("#services-carousel").owlCarousel('destroy'); 
+    $("#services-carousel").owlCarousel('destroy');
     $("#services-carousel").owlCarousel({
       items: 1, // Show one item (contains two anchors)
       loop: true,
@@ -139,7 +139,7 @@ if (servicesCarousel.length) {
 
   // custom dots for service carosuel,
   $('.service-dot').click(function () {
-    var index = $(this).data('dot');
+    let index = $(this).data('dot');
     servicesCarousel.trigger('to.owl.carousel', [index, 1200]); // Navigate to the corresponding slide
   });
 
@@ -147,7 +147,7 @@ if (servicesCarousel.length) {
 
 
   servicesCarousel.on('changed.owl.carousel', function (event) {
-    var currentIndex = event.item.index;  // 
+    let currentIndex = event.item.index;  // 
 
 
     currentIndex = currentIndex - event.relatedTarget._clones.length / 2;
@@ -216,7 +216,7 @@ if (branchesMap.length) {
                 
                 `);
 
-                markers[index] = marker;
+      markers[index] = marker;
 
     });
 
@@ -225,14 +225,14 @@ if (branchesMap.length) {
     $('#select-branch div').click(function () {
       const selectedBranch = $(this).data('value');
       const branch = branches[selectedBranch];
-      const marker = markers[selectedBranch]; 
+      const marker = markers[selectedBranch];
 
       console.log(branch)
 
 
       if (branch && marker) {
         marker.openPopup();
-            $('#dropdown-input').text(branch.name);
+        $('#dropdown-input').text(branch.name);
         $('#select-branch').hide();
       } else {
         console.error("Branch or marker not found for:", selectedBranch);
@@ -325,21 +325,21 @@ if (branchesInnerMap.length) {
                 
                 `);
 
-                markers[index] = marker;
+      markers[index] = marker;
 
     });
     // When a branch is selected
     $('.panel li').click(function () {
       const selectedBranch = $(this).data('value');
       const branch = branches[selectedBranch];
-      const marker = markers[selectedBranch]; 
+      const marker = markers[selectedBranch];
 
       console.log(branch)
 
 
       if (branch && marker) {
         marker.openPopup();
-            $('#dropdown-input').text(branch.name);
+        $('#dropdown-input').text(branch.name);
         $('#select-branch').hide();
       } else {
         console.error("Branch or marker not found for:", selectedBranch);
@@ -370,7 +370,7 @@ if (acc.length) {
 
       // Toggle the current accordion
       $(this).toggleClass("active-acc");
-      var panel = $(this).next();
+      let panel = $(this).next();
       panel.slideToggle();
     });
   });
@@ -378,7 +378,7 @@ if (acc.length) {
 
 
 //menu acordion
-if ($(".menu__item > .menu__link")) {
+if ($(".menu__item > .menu__link").length) {
 
   $(".menu__item > .menu__link").on("click", function (e) {
     const submenu = $(this).next(".submenu");
@@ -420,38 +420,38 @@ if (toglebtn) {
 const creditForm = $('.credit-form')
 console.log(creditForm)
 
-if(creditForm){
+if (creditForm.length) {
 
-  
-  creditForm.on("submit", function(e){
+
+  creditForm.on("submit", function (e) {
     e.preventDefault()
 
-  
-    let agreedToTerms=$("#terms").prop('checked')
+
+    let agreedToTerms = $("#terms").prop('checked')
     let creditAmount = $('#cr-amount').val()
     console.log(creditAmount)
 
-    if(creditAmount > 3000){
+    if (creditAmount > 3000) {
       $('#warning-message').show()
-    }else{
+    } else {
       $('#warning-message').hide()
     }
 
     let selectedBackup = [];
 
-    $('.backup-type input[type="checkbox"]').each(function() {
-      if ($(this).prop('checked')) { 
+    $('.backup-type input[type="checkbox"]').each(function () {
+      if ($(this).prop('checked')) {
         selectedBackup.push($(this).attr('value')); // Get the value attribute of the checkbox
-    }
+      }
     });
 
 
-    
+
     console.log("Selected backup options: ", selectedBackup);
-    if(!agreedToTerms){
+    if (!agreedToTerms) {
       $("#term-text").css("color", "red");
 
-    }else{
+    } else {
       $("#term-text").css("color", "black");
 
     }
@@ -462,18 +462,183 @@ if(creditForm){
 
 }
 
-const cityDrop = $('#city-drop')
-const cityInput = $('#credit-city')
-const closeDrop = $('#close-dropdown')
-if (cityDrop.length && cityInput.length && closeDrop.length) {
-  cityDrop.hide()
-  cityInput.on('click', function () {
-    cityDrop.show(); // Show the dropdown
+
+//  slider on mortgage page
+$(document).ready(function() {
+  // Initialize the slider
+  $("#slider-months").slider({
+      min: 0,
+      max: 180,
+      step: 6,
+      value: 0,
+      slide: function(event, ui) {
+          // Update the value in the input field when the slider is moved
+          $("#slider-months-value").val(ui.value);
+      }
   });
 
-  closeDrop.on('click', function () {
-    cityDrop.hide(); // Hide the dropdown
+  // Initialize the input field with the slider's value
+  $("#slider-months-value").val($("#slider-months").slider("value"));
+
+  // When the user types a value in the input, update the slider
+  $("#slider-months-value").on("input", function() {
+      let inputValue = $(this).val();
+
+      // Clamp the input value between the slider's min and max values
+      if (inputValue < 30) {
+          inputValue = 30;
+      } else if (inputValue > 180) {
+          inputValue = 180;
+      }
+
+      // Set the slider's value to the input value
+      $("#slider-months").slider("value", inputValue);
   });
+
+  // Add ticks and marks after the slider is initialized
+  addTicksAndMarks("#slider-months");
+});
+
+
+
+
+$(document).ready(function() {
+  // Initialize the slider
+  $("#slider").slider({
+      min: 0,
+      max: 30000,
+      step: 500,
+      value: 0,
+      slide: function(event, ui) {
+          // Update the value in the input field when the slider is moved
+          $("#slider-value").val(ui.value);
+      }
+  });
+
+  // Initialize the input field with the slider's value
+  $("#slider-value").val($("#slider").slider("value"));
+
+  // When the user types a value in the input, update the slider
+  $("#slider-value").on("input", function() {
+      let inputValue = $(this).val();
+
+      // Clamp the input value between the slider's min and max values
+      if (inputValue < 500) {
+          inputValue = 500;
+      } else if (inputValue > 30000) {
+          inputValue = 30000;
+      }
+
+      // Set the slider's value to the input value
+      $("#slider").slider("value", inputValue);
+  });
+
+  // Add ticks and marks after the slider is initialized
+  addTicksAndMarks("#slider");
+});
+
+// Function to add ticks and marks
+function addTicksAndMarks(sliderSelector) {
+  let slider = $(sliderSelector);
+  let min = slider.slider("option", "min");
+  let max = slider.slider("option", "max");
+  let step = slider.slider("option", "step");
+  let tickContainer = $("<div>").addClass("tick-container").appendTo(slider);
+
+
+
+  // Add marks at every 5000 (5k, 10k, 15k, etc.)
+  if(max > 10000){
+
+    let mark = $("<div>").addClass("ui-slider-mark")
+    .css("left", (1 + "%"))
+    .text(200) 
+    .appendTo(tickContainer);
+    for (let i = min; i <= max; i += 5000) {
+      if(i === 0){
+       continue
+      }
+       let mark = $("<div>").addClass("ui-slider-mark")
+                            .css("left", ((i - min) / (max - min)  )  * 98.8 + "%")
+                            .text(i) // Display the value (5000, 10000, etc.)
+                            .appendTo(tickContainer);
+   }
+  }else{
+    let mark = $("<div>").addClass("ui-slider-mark")
+    .css("left", (1 + "%"))
+    .text(0) 
+    .appendTo(tickContainer);
+    for (let i = min; i <= max; i += 30) {
+      if(i === 0){
+       continue
+      }
+       let mark = $("<div>").addClass("ui-slider-mark")
+                            .css("left", ((i - min) / (max - min)  )  * 99.5 + "%")
+                            .text(i) // Display the value (5000, 10000, etc.)
+                            .appendTo(tickContainer);
+   }
+  }
+
+
 }
 
 
+
+
+
+
+
+
+
+
+/// dropdowns
+function makeDropdown(dropdownRef, inputRef, closebtnRef) {
+  return function () {
+    const dropdown = $(dropdownRef);
+    const input = $(inputRef);
+    const closebtn = $(closebtnRef);
+
+    if (dropdown.length && input.length && closebtn.length) {
+      dropdown.hide(); // Initially hide the dropdown
+
+      // When the input is clicked, show the dropdown
+      input.on('click', function () {
+        dropdown.show();
+      });
+
+      // When a radio button is selected, update the input value and hide the dropdown
+      dropdown.find('input[type="radio"]').on('change', function () {
+        const selectedValue = $(this).val();
+        input.val(selectedValue); 
+        dropdown.hide();
+      });
+
+      // Close the dropdown when the close button is clicked
+      closebtn.on('click', function () {
+        dropdown.hide();
+      });
+
+      // Optional: Close the dropdown when clicking outside it
+      $(document).on('click', function (event) {
+        if (!$(event.target).closest(`${dropdownRef}, ${inputRef}`).length) {
+          dropdown.hide();
+        }
+      });
+    }
+
+  }
+
+}
+
+
+const cityDropdown = makeDropdown('#city-drop', '#credit-city', '#close-dropdown-city');
+const landDropdown = makeDropdown('#land-drop', '#land-type', '#close-dropdown-land');
+const manufacturerDropdown = makeDropdown('#manufacturer-drop', '#auto-manufacturer-input', '#close-dropdown-manufacturer');
+const steeringDropdown = makeDropdown('#steering-drop', '#steering-input', '#close-dropdown-steering');
+const engineDropdown = makeDropdown('#engine-drop', '#engine-input', '#close-dropdown-engine');
+
+cityDropdown()
+landDropdown()
+manufacturerDropdown()
+steeringDropdown()
+engineDropdown()

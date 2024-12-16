@@ -186,7 +186,7 @@
     <section class="vacancy">
         <header>
             <h1>
-                იპოთეკური სესხი
+                ავტოსესხი
             </h1>
 
         </header>
@@ -224,44 +224,100 @@
                     <div class="dropdown-input">
                         <img class="dropdown-arr" src="assets/images/dropdown-arr.png" alt="">
 
-                        <label for="credit-city">აირჩიე ქალაქი</label>
-                        <input required type="text" name="" pattern=".*" id="credit-city">
-                        <ul class="dropdown-forms" id="city-drop">
+                        <label for="auto-manufacturer-input">მწარმოებელი</label>
+                        <input required type="text" name="" pattern=".*" id="auto-manufacturer-input">
+                        <ul class="dropdown-forms" id="manufacturer-drop">
                             <li>
                                 <label>
-                                    <input type="radio" name="group1" value="თბილისი">
-                                    თბილისი
+                                    <input type="radio" name="group3" value="აუდი">
+                                    აუდი
 
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="radio" name="group1" value="ბათუმი">
-                                    ბათუმი
+                                    <input type="radio" name="group3" value="აუდი">
+                                    აუდი
 
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="radio" name="group1" value="ქუთაისი">
-                                    ქუთაისი
+                                    <input type="radio" name="group3" value="აუდი">
+                                    აუდი
+
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="group3" value="აუდი">
+                                    აუდი
+
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="group3" value="აუდი">
+                                    აუდი
+
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="group3" value="აუდი">
+                                    აუდი
+
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="group3" value="აუდი">
+                                    აუდი
+
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="group3" value="აუდი">
+                                    აუდი
+
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="group3" value="აუდი">
+                                    აუდი
+
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="group3" value="მერსედესი">
+                                    მერსედესი
+
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="group3" value="ფორდი">
+                                    ფორდი
 
                                 </label>
                             </li>
 
-                            <button id="close-dropdown-city" class="close-credit-select">დახურვა</button>
+                            <button id="close-dropdown-manufacturer" class="close-credit-select">დახურვა</button>
                         </ul>
 
                     </div>
 
                     <div>
 
-                        <label for="credit-code">საკადასტრო კოდი</label>
-                        <input required name="" id="credit-code">
+                        <label for="auto-year">გამოშვების წელი</label>
+                        <input required name="" type="number" pattern="[0-9]+"  id="auto-year">
                     </div>
                     <div>
 
-                        <label for="credit-address">ქუჩის მისამართი</label>
+                        <label for="credit-address">მოდელი</label>
                         <input required name="" id="credit-address">
                     </div>
                     <div class=" input-group ">
@@ -269,40 +325,68 @@
                         <div class="dropdown-input">
                             <img class="dropdown-arr" src="assets/images/dropdown-arr.png" alt="">
 
-                            <label for="land-type">ქონების ტიპი</label>
-                            <input required type="text" pattern=".*" name="" id="land-type">
-                            <ul class="dropdown-forms" id="land-drop">
+                            <label for="steering-type"> საჭე</label>
+                            <input required type="text" name="steering-type" pattern=".*" id="steering-input">
+                            <ul class="dropdown-forms" id="steering-drop">
                                 <li>
                                     <label>
-                                        <input type="radio" name="group2" value="მიწა">
-                                        მიწა
-
+                                        <input type="radio" name="group4" value="მარცხენა">
+                                        მარცხენა
                                     </label>
                                 </li>
                                 <li>
                                     <label>
-                                        <input type="radio" name="group2" value="ბინა">
-                                        ბინა
+                                        <input type="radio" name="group4" value="მარჯვენა">
+                                        მარჯვენა
 
                                     </label>
                                 </li>
-                                <li>
-                                    <label>
-                                        <input type="radio" name="group2" value="სახლი">
-                                        სახლი
+                             
 
-                                    </label>
-                                </li>
-
-                                <button id="close-dropdown-land" class="close-credit-select">დახურვა</button>
+                                <button id="close-dropdown-steering" class="close-credit-select">დახურვა</button>
                             </ul>
 
                         </div>
-                        <div>
+                        <div class="dropdown-input">
+                            <img class="dropdown-arr" src="assets/images/dropdown-arr.png" alt="">
 
-                            <label for="credit-area">ქონების ფართი</label>
-                            <input required pattern="[0-9]+" type="number" name="" id="credit-area" placeholder="კვ.მ">
+                            <label for="engine-input">საწვავის ტიპი</label>
+                            <input required type="text" name="" pattern=".*" id="engine-input">
+                            <ul class="dropdown-forms" id="engine-drop">
+                                <li>
+                                    <label>
+                                        <input type="radio" name="group5" value="ელექტრო">
+                                        ელექტრო
+
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="group5" value="გაზი">
+                                        გაზი
+
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="group5" value="ბენზინი">
+                                        ბენზინი
+
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="group2" value="ბენზინი">
+                                        ბენზინი
+
+                                    </label>
+                                </li>
+
+                                <button id="close-dropdown-engine" class="close-credit-select">დახურვა</button>
+                            </ul>
+
                         </div>
+                      
                     </div>
                 </div>
                 <div class="credit-credentials credit-3000">
