@@ -3120,6 +3120,9 @@ top: -8px;
 .credit-calc input:focus{
   border-color:var(--header-color) ;
 }
+.credit-nav a:hover{
+  color: var(--header-color);
+}
 
 
 /* 
