@@ -231,7 +231,12 @@
         <label class="slider-label" for="slider"> სესხის ოდენობა</label>
         <div id="slider"></div>
         <div class="slider-value">
-            <input type="number" id="slider-value" placeholder="ლ" max="30000">
+            <label for="slider-value">
+
+                <input type="number" id="slider-value" placeholder="0.00" max="30000">
+                <span class="problematic-span">₾</span>
+
+            </label>
           
         </div>
     </div>
@@ -240,8 +245,58 @@
         <label class="slider-label" for="slider"> თვეების ოდენობა</label>
         <div id="slider-months"></div>
         <div class="slider-value">
-            <input type="number" id="slider-months-value" placeholder="თვე" max="180">
+            <label class="credit-label" for="slider-months-value">
+
+                <input type="number" id="slider-months-value" placeholder="0" max="180">
+                <span>თვე</span>
+
+            </label>
           
+        </div>
+    </div>
+    <div class="credit-calc">
+        <div class="left">
+            <h4>ყოველთვიური გადასახადი</h4>
+            <label class="credit-label" for="monthly-payment">
+
+                <input type="number" id="monthly-payment" placeholder="0.00">
+                <span>₾</span>
+            </label>
+        </div>
+        <div class="right">
+            <div class="dropdown-input">
+                <img class="dropdown-arr dropdown-arr-2" src="assets/images/arr-right.png" alt="">
+    
+                <!-- <label for="credit-schedule">აირჩიე ქალაქი</label> -->
+                <input required type="text" name="" pattern=".*" placeholder="გრაფიკი" id="schedule-input">
+                <ul class="dropdown-forms" id="schedule-drop">
+                    <li>
+                        <label>
+                            <input type="radio" name="group6" value="1">
+                            1
+    
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="group6" value="2">
+                            2
+    
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="group6" value="3">
+                            3
+    
+                        </label>
+                    </li>
+    
+                    <button id="close-dropdown-schedule" class="close-credit-select">დახურვა</button>
+                </ul>
+    
+            </div>
+            <button class="btn"> განცხადება</button>
         </div>
     </div>
 </div>
@@ -275,6 +330,7 @@
         </li>
     </ul>
 </div>
+
 </div>
         
         

@@ -516,7 +516,6 @@ $(document).ready(function() {
   });
 
   // Initialize the input field with the slider's value
-  $("#slider-value").val($("#slider").slider("value"));
 
   // When the user types a value in the input, update the slider
   $("#slider-value").on("input", function() {
@@ -573,7 +572,7 @@ function addTicksAndMarks(sliderSelector) {
        continue
       }
        let mark = $("<div>").addClass("ui-slider-mark")
-                            .css("left", ((i - min) / (max - min)  )  * 99.5 + "%")
+                            .css("left", ((i - min) / (max - min)  )  * 100 + "%")
                             .text(i) // Display the value (5000, 10000, etc.)
                             .appendTo(tickContainer);
    }
@@ -636,9 +635,11 @@ const landDropdown = makeDropdown('#land-drop', '#land-type', '#close-dropdown-l
 const manufacturerDropdown = makeDropdown('#manufacturer-drop', '#auto-manufacturer-input', '#close-dropdown-manufacturer');
 const steeringDropdown = makeDropdown('#steering-drop', '#steering-input', '#close-dropdown-steering');
 const engineDropdown = makeDropdown('#engine-drop', '#engine-input', '#close-dropdown-engine');
+const scheduleDropdown = makeDropdown('#schedule-drop', '#schedule-input', '#close-dropdown-schedule');
 
 cityDropdown()
 landDropdown()
 manufacturerDropdown()
 steeringDropdown()
 engineDropdown()
+scheduleDropdown()

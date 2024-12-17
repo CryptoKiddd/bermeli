@@ -599,7 +599,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-inline: 33px;
+  padding-inline: 32px;
   height: 100%;
   cursor: pointer;
   transition: 350ms ease-out;
@@ -2718,11 +2718,11 @@ td {
   border-radius: 25px;
   min-height: 200px;
   max-height: 400px;
-  z-index: 2;
+  z-index: 10;
   top: 0;
   width: 100%;
   overflow-y: scroll;
-  border: 2px solid #808080;
+  border: 1px solid #808080;
 
   /* Add Flexbox Layout */
   display: flex;
@@ -2733,6 +2733,9 @@ td {
 .dropdown-forms::-webkit-scrollbar {
   width: 1px;
 
+}
+.credit-calc .close-credit-select{
+  width: 100%;
 }
 
 .dropdown-forms li {
@@ -2904,18 +2907,19 @@ height: 40px;
 position: relative;
 width: 160px;
   font-size: 14px;
-  border: 1px solid #808080;
+  border: 1px solid #D8D8D8;
   color: #808080;
   border-radius: 50px;
   margin-right: 10px;
   padding-inline: 20px;
-  font-family: 'Helvetica Neue LT GEO 75 Roman';
+  padding-left: 10px;
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
 
 }
 #slider-value::placeholder{
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
 
-  padding-left: 50px;
-  font-family: serif;
+  padding-left:10px;
 }
 
 
@@ -2942,19 +2946,18 @@ top: -8px;
   text-align: center;
   font-size: 16px;
   color: #808080;
-  margin-left: -15px;
+  margin-left: -9px;
   font-weight: bold;
 }
 .mortgage-submenu{
   padding: 50px 0;
   display: flex;
-  gap: 30px;
+  gap: 15px;
 }
 .sliders{
   display: flex;
   flex-direction: column;
-  gap:50px;
-  margin: 0 auto;
+  gap:30px;
   max-width: 1222px;
   background-color: white;
 
@@ -2963,14 +2966,13 @@ top: -8px;
   box-shadow: 0px 3px 10px #D8D8D8;
   
   border-radius: 50px;
-  padding: 70px ;
-  padding-inline: var(--fullhd-padding-small);
+  padding: 50px 80px ;
 }
 .credit-nav{
   background-color: white;
   border-radius: 50px;
   
-  padding: 70px ;
+  padding: 50px 80px ;
   border: 1px solid #D8D8D8;
   box-shadow: 0px 3px 10px #D8D8D8;
   
@@ -2990,6 +2992,7 @@ top: -8px;
 .mortgage header {
   font-size: 40px;
   padding: 70px ;
+  padding-inline: var(--fullhd-padding-small);
   font-family: 'Helvetica Neue LT GEO 75 Caps';
   color: var(--header-color);
 }
@@ -2998,7 +3001,249 @@ top: -8px;
   display: flex;
   justify-content: center;
   padding-bottom: 100px;
+  gap: 100px;
 }
+.mortgage h4{
+  font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
+
+}
+
+.credit-calc{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.credit-calc > div{
+  display: flex;
+  gap: 60px;
+  flex: 1;
+}
+.credit-calc .left{
+  position: relative;
+  justify-content: flex-start;
+}
+.credit-label{
+  position: relative;
+}
+.credit-calc .left span, .slider-value span{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--grey-font);
+}
+
+.credit-calc .right{
+  justify-content: flex-end;
+}
+.credit-calc  input, .slider-value input{
+  height: 36px;
+  border: 1px solid #D8D8D8;
+    border-radius: 50px;
+    width: 160px;
+    padding-left: 12px;
+    transition: 350ms ease;
+    background-color: rgba(128, 128, 128, 0.01);
+    font-family: 'Helvetica Neue LT GEO 55 Roman Сaps';
+    border-radius:50px;
+}
+.credit-calc button{
+  width: 160px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.dropdown-arr-2{
+  top: 50%;
+  width: 6px;
+  height: 12.65px;
+  right: 19px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.credit-calc .left h4{
+  color: var(--header-color);
+}
+.slider-value .problematic-span{
+  top: 57%;
+}
+/* Remove the outline on focus */
+.ui-state-default:focus,
+.ui-button:focus {
+    outline: none;
+}
+#schedule-input::placeholder{
+  color: var(--header-color);
+}
+.credit-calc .dropdown-input .dropdown-forms input{
+  display: block;
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  background: #fff;
+  transition: background 0.3s, border-color 0.3s;
+  right: 20px;
+
+}
+.credit-calc .dropdown-input .dropdown-forms input:checked{
+  border: 5px solid var(--secondary-color);
+}
+.credit-calc .dropdown-input .dropdown-forms label{
+
+
+  position: relative;
+      font-family: 'Helvetica Neue LT GEO 55 Roman';
+      left: inherit;
+      top: inherit;
+      color: var(--grey-font);
+      width: 100%;
+}
+.credit-calc .dropdown-forms{
+  border-radius: 18px;
+}
+
+
+/* For focus-visible (if browser uses focus-visible) */
+.ui-state-default:focus-visible,
+.ui-button:focus-visible {
+    outline: none;
+}
+.credit-calc input:focus{
+  border-color:var(--header-color) ;
+}
+
+
+/* 
+///////////////////////////////
+///////////////////////////////
+///////////////////////////////
+///////////////////////////////
+  START   Forms and mortgage responsive after correction
+
+////////////////////////////
+////////////////////////////
+////////////////////////////
+////////////////////////////
+////////////////////////////
+
+
+
+*/
+@media(width < 1367px){
+
+  .mortgage main{
+    gap: 17px;
+  }
+}
+@media(width < 432px){
+  .mortgage main{
+    padding-inline: 10px;
+  }
+  .mortgage-submenu, .slider-container,.credit-calc{
+    flex-direction: column;
+  }
+  .credit-calc{
+    gap: 30px;
+  
+  }
+  .credit-nav{
+    border: none;
+    border-radius:0 ;
+  }
+  .sliders{
+    padding:25px ;
+    border: none;
+    border-radius:0 ;
+  }
+  .mortgage{
+    padding-inline: 0;
+  }
+  #slider .ui-slider-mark, #slider-months .ui-slider-mark{
+    font-size: 12px;
+  }
+  .mortgage header h1{
+    font-size: 34px;
+  }
+  .about header h1, .team header h1{
+    font-size: 34px;
+  }
+  .services-page .services-inner{
+    justify-content: center;
+    gap: 27px;
+  }
+  .vacancy-form .credit-credentials .input-group {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .input-group label[for="credit-area"] {
+    position: relative;
+    top: 80px;
+  }
+  .slider-value label[for="slider-months-value"] span  {
+    margin-left: -52px;
+    margin-top: 0.5px;
+
+  }
+  .credit-amount .lari{
+    right: -40px;
+  }
+  .slider-value .problematic-span {
+    top: 88%;
+    margin-left: -38px;
+  }
+  .credit-calc .left span, .slider-value span{
+  right: inherit;
+  margin-left: -30px;
+  margin-top: -5px;
+  }
+  .dropdown-arr{
+    right: 39px;
+  }
+    .vacancy{
+    padding-inline: 20px;
+  }
+}
+
+
+
+
+/* 
+///////////////////////////////
+///////////////////////////////
+///////////////////////////////
+///////////////////////////////
+END         Forms and mortgage responsive after correction
+
+////////////////////////////
+////////////////////////////
+////////////////////////////
+////////////////////////////
+////////////////////////////
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* 
