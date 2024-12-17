@@ -3120,8 +3120,14 @@ top: -8px;
 .credit-calc input:focus{
   border-color:var(--header-color) ;
 }
+.credit-calc input:valid{
+  border-color:var(--secondary-color) ;
+}
 .credit-nav a:hover{
   color: var(--header-color);
+}
+#slider-value:valid, #slider-months-value:valid{
+  border-color: var(--secondary-color);
 }
 
 
