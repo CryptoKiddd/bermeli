@@ -485,8 +485,8 @@ $(document).ready(function() {
       let inputValue = $(this).val();
 
       // Clamp the input value between the slider's min and max values
-      if (inputValue < 30) {
-          inputValue = 30;
+      if (inputValue < 6) {
+          inputValue = 6;
       } else if (inputValue > 180) {
           inputValue = 180;
       }
@@ -568,9 +568,7 @@ function addTicksAndMarks(sliderSelector) {
     .text(0) 
     .appendTo(tickContainer);
     for (let i = min; i <= max; i += 30) {
-      if(i === 0){
-       continue
-      }
+     
        let mark = $("<div>").addClass("ui-slider-mark")
                             .css("left", ((i - min) / (max - min)  )  * 100 + "%")
                             .text(i) // Display the value (5000, 10000, etc.)
